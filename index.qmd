@@ -1,0 +1,155 @@
+---
+title: "Sharing is caring"
+format: 
+  revealjs:
+    code-fold: true
+    lightbox: true
+---
+
+## Preliminaries
+
+## Overview
+
+- Databrary
+
+# 
+
+![[databrary.org](https://databrary.org)](https://databrary.org/assets/logo-nav-dQIvaOqh.svg)
+
+## What is it?
+
+- Data library
+- Housed at NYU
+- Specialized for storing, sharing *identifiable data*
+
+## Restricted access
+
+```{r}
+#| echo: true
+release_levels <- databraryr::get_release_levels()
+```
+
+:::: {.columns}
+::: {.column width=50%}
+- *Private*: Accessible only to data owner + people supervised by owner
+- *Authorized Users*: Accessible to Authorized Users (for broad research reuse)
+:::
+::: {.column width=50%}
+![](include/img/databrary-release-levels.png)
+:::
+::::
+
+## Restricted access
+
+:::: {.columns}
+::: {.column width=50%}
+- *Learning Audiences*: Accessible to Authorized Users (for broad research reuse) + permission to show clips in public talks
+- *Public*: Accessible to anyone (e.g., non-identifiable displays)
+:::
+::: {.column width=50%}
+![](include/img/databrary-release-levels.png)
+:::
+::::
+
+## Explicit sharing permission
+
+:::: {.columns}
+::: {.column width=50%}
+- Adult & minor parent/guardian [permission](https://databrary.org/support/irb/release-template)
+- Child assent
+- [Research staff](https://databrary.org/support/irb/staff-agreement)
+- Release [script](https://databrary.org/support/irb/script)
+:::
+::: {.column width=50%}
+::: {.fragment}
+{{< video https://databrary.org/assets/example-video-1-Dyoh4lqO.mp4 >}}
+:::
+:::
+::::
+
+## By the numbers
+
+```{r}
+#| message: false
+#| include: false
+library(databraryr)
+login_db(email = Sys.getenv("DATABRARY_LOGIN"),
+         password = Sys.getenv("DATABRARY_PASSWORD"),
+         client_id = Sys.getenv("DATABRARY_CLIENT_ID"),
+         client_secret = Sys.getenv("DATABRARY_CLIENT_SECRET"),
+         store = FALSE,
+         overwrite = FALSE)
+```
+
+```{r}
+#| echo: true
+db_stats <- databraryr::get_db_stats()
+```
+
+- *N*=`{r} db_stats$institutions` institutions
+- *N*=`{r} format(db_stats$investigators, big.mark = ",")` institutionally-authorized investigators
+- *N*=`{r} db_stats$affiliates` staff & trainees
+- *N*=`{r} format(db_stats$hours_of_recordings, big.mark = ",")` hours of shared recordings
+
+## Growth
+
+## @ Penn State {.scrollable}
+
+:::: {.columns}
+::: {.column width=50%}
+```{r}
+#| echo: true
+psu_info <- get_institution_by_id(institution_id = 12)
+if (psu_info$has_avatar) {
+  avatar_fn <- get_institution_avatar(12, dest_path = "tmp/psu_avatar.png")
+}
+```
+
+![Penn State avatar downloaded via the Databrary API.](tmp/psu_avatar.png){#fig-map fig-align="left"}
+:::
+::: {.column width=50%}
+```{r}
+#| echo: true
+#| label: fig-map-lat-lon
+#| fig-cap: "A map generated via lat/lon data provided via the Databrary API."
+
+lat <- as.numeric(psu_info$latitude)
+lon <- as.numeric(psu_info$longitude)
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Adds the default OpenStreetMap map background
+  addMarkers(lng = lon, lat = lat, popup = "We are...")
+```
+:::
+::::
+
+## @ Penn State {.scrollable}
+
+```{r}
+#| echo: true
+psu_ais <- list_institution_affiliates(institution_id = 12)
+```
+
+- There are *n*=`{r} dim(psu_ais)[1]` Authorized Investigators
+
+---
+
+```{r}
+library(kableExtra)
+psu_ais |>
+  dplyr::select(user_id, user_prename, user_sortname) |>
+  dplyr::rename(id = user_id, first = user_prename, last = user_sortname) |>
+  kableExtra::kable() |>
+  kable_styling("striped", full_width = FALSE) %>%
+  scroll_box(width = "900px", height = "600px")
+```
+
+## Some illustrative datasets
+
+## New features
+
+- Secure API for scriptable interactions (up/download)
+  - *databraryr* (R)
+  - *databrarypy* (Python)
+- Custom Collections
+  - Curate your own set of clips, datasets
