@@ -1,16 +1,597 @@
 ---
 title: "Sharing is caring"
-format: 
-  revealjs:
-    code-fold: true
-    lightbox: true
+subtitle: "Insights from the front lines of the open science revolution"
+format: revealjs
 ---
 
-## Preliminaries
+# Preliminaries
 
-## Overview
+---
 
-- Databrary
+{{< video https://www.youtube.com/watch?v=66oNv_DJuPc width="100%" height="70%" >}}
+
+-- @NYU_Health_Sciences_Library2013-gp
+
+---
+
+```{r}
+#| label: fig-cog-bbag-talk-qr
+#| fig-cap: "<https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/>"
+plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/"))
+```
+
+## Agenda
+
+- My (not so) hidden one
+- How (to share)
+- Where (to share)
+- What (to share)
+- The future of open psychological science
+
+# My (not so) hidden agenda
+
+## 
+
+![<https://penn-state-open-science.github.io>](include/img/osi-home.png)
+
+## Best practices in
+
+::: {.incremental}
+- Project management
+- $+$ Data management 
+- $\rightarrow$ Sharing
+:::
+
+## Sharing...
+
+::: {.incremental}
+- Accelerates discovery
+- Bolsters credibility
+:::
+
+## An ethical thing to do
+
+>Whereas regulators of human subjects research often view data sharing solely in terms of potential risks to subjects, we argue that the **principles of human subject research require an analysis of both risks and benefits**...
+
+-- @Brakewood2013-wj
+
+## 
+
+>...such an analysis suggests that **researchers may have a positive duty to share data** in order to maximize the contribution that individual participants have made.
+
+-- @Brakewood2013-wj
+
+## Ethical data sharing
+
+:::: {.columns}
+::: {.column width=50%}
+- **F**indable
+- **A**ccessible
+- **I**nteroperable
+- **R**eusable
+
+-- @Wilkinson2016-qr
+:::
+::: {.column width=50%}
+![@Carroll2020-mo](include/img/care-principles-datapng.png){#fig-care-principles width="75%"}
+:::
+::::
+
+## {auto-animate=true}
+
+![@Tenopir2020-mq Fig 7](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0229003.g007&type=large){#fig-tenopir-2020-fig-7 width="75%"}
+
+## {auto-animate=true}
+
+![@Tenopir2020-mq Fig 8](include/img/tenopir-2000-fig-xx.png){width="150%"}
+
+## {auto-animate=true}
+
+:::: {.columns}
+::: {.column width=60%}
+![@Tenopir2020-mq](include/img/tenopir-2000-fig-xx.png)
+:::
+::: {.column width=40%}
+::: {.fragment}
+- Must publish first
+- No time, funding
+- No permission
+- Not required
+- No place to put
+- Insufficient skills
+:::
+:::
+::::
+
+---
+
+![@Houtkoop2018-tl](include/img/houtkoop-2018-title.png)
+
+---
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl3aDlrZWZ2Nm9tcXh1czhvYjk4bjJlc2M3emR5dG96NnpldWx0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif){fig-align="center"}
+
+## {auto-animate=true}
+
+![@Houtkoop2018-tl Figure 3a](include/img/houtkoop-2018-fig-03a.png)
+
+## {auto-animate=true}
+
+:::: {.columns}
+::: {.column width=60%}
+![@Houtkoop2018-tl Figure 3a](include/img/houtkoop-2018-fig-03a.png)
+:::
+::: {.column width=40%}
+::: {.fragment}
+- Misinterpretations of the data
+- Scooped
+- Control over IP
+- Unintended secondary use
+- Invalid conclusions, errors
+:::
+:::
+::::
+
+## {auto-animate=true}
+
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-03b.png)
+
+## {auto-animate=true}
+
+:::: {.columns}
+::: {.column width=60%}
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-03b.png)
+:::
+::: {.column width=40%}
+::: {.fragment}
+- Invalid conclusions
+- Control over IP
+- Errors
+- Misinterpretation
+:::
+:::
+::::
+
+## Moving the needle {auto-animate=true auto-animate-easing="ease-in-out"}
+
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png)
+
+## {auto-animate=true auto-animate-easing="ease-in-out"}
+
+:::: {.columns}
+::: {.column width=60%}
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png)
+:::
+::: {.column width=40%}
+::: {.fragment}
+- Required by funder, journal, institution
+- Encouraged by funder, journal, institution
+- Easy, shown how
+- Garner citations, recognition, bigger/more grants
+:::
+:::
+::::
+
+## Funders think you should
+
+![@UnknownUnknown-da](include/img/nsf-data-sharing.png)
+
+---
+
+![@UnknownUnknown-zt](include/img/nih-2003-policy.png)
+
+## NIH Data Management and Sharing Plan (DMS)
+
+> to promote the management and sharing of scientific data generated from NIH-funded or conducted research.
+
+-- @National-Institutes-of-HealthUnknown-ys
+
+## NIH Data Management and Sharing Plan (DMS)
+
+![](include/img/nih-dms-2023-01-25.png)
+
+## NIH Data Management and Sharing Plan (DMS)
+
+- 2p DMS plan **required**
+- Must justify reasons if not sharing
+- Sharing plans become formal part of award agreement
+
+---
+
+![@UnknownUnknown-hn](include/img/psu-rdm-policy.png)
+
+---
+
+:::: {.columns}
+::: {.column width=60%}
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png)
+:::
+::: {.column width=40%}
+- *Required by funder*, journal, institution
+- *Encouraged by funder*, *journal*, *institution*
+
+::: {.incremental}
+- **Easy, shown how**
+- **Garner citations, recognition, bigger/more grants**
+:::
+:::
+::::
+
+
+
+# How
+
+---
+
+![Giphy](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjRrM2I1aHE4amd3cno5dmtpMmM2eG5wbDI3ZGhudGxrZ24xc2t2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nBjOqZ6h0ili0/giphy.gif){#fig-giphy-messy-room width="65%"}
+
+---
+
+![https://teacherhead.com/2017/02/27/reinventing-the-wheel-again/](https://headguruteacher.files.wordpress.com/2017/02/9464b325-d2f4-4604-8258-82093bf93af6.jpg){#fig-we-are-too-busy}
+
+## Pay me now, or pay me later
+
+{{< video https://youtu.be/Ij1yDpfZI8Q?si=69indipc6N5Vsc7s width="100%" height="70%" >}}
+
+-- @PathfindersPerform2013-cy
+
+## Principles
+
+- Plan your work, work your plan
+- "Good enough" practices
+- Document
+- Automate
+- Get credit
+
+## Plan your work
+
+```{mermaid}
+%%| label: fig-proposal-to-project
+%%| fig-cap: "From proposal to project"
+flowchart LR
+  A(["Idea"]) --> B["Proposal"]
+  B --> C("Project_1")
+  B --> D("Project_2")
+  D --> E("Paper_2")
+  C --> F("Paper_1")
+  E --> G("Fame & Glory")
+  F --> G
+```
+
+---
+
+```{mermaid}
+%%| label: fig-proposal-to-project-realistic
+%%| fig-cap: "From proposal to project: More realistic"
+flowchart LR
+  A(["Idea"]) --> B["Proposal"]
+  B --> C("Project_1")
+  B --> D("Project_2")
+  B --> I("IRB protocol")
+  G(["Data mgmt plan"]) --> B
+  G <--> I
+  C --> I
+  D --> I
+  D --> E("Paper_2")
+  C --> F("Paper_1")
+```
+
+---
+
+```{mermaid}
+%%| label: fig-one-project
+%%| fig-cap: "One project workflow"
+flowchart LR
+  A["Project_1"] --> B["Survey"]
+  A --> C["fMRI"]
+  A --> D["Task_1"]
+  A --> E["Task_2"]
+  B --> P["Data_pipeline_1"]
+  C --> Q["Data_pipeline_2"]
+  D --> R["Data_pipeline_3"]
+  E --> R
+  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
+  P --> G["Analysis_1"]
+  Q & R --> H["Analysis_2"]
+  G & H --> I["Poster"]
+  G & H --> J["Paper"]
+```
+
+---
+
+```{mermaid}
+%%| label: fig-one-project-w-sharing
+%%| fig-cap: "Planned data sharing to a repository"
+flowchart TD
+  A["Project_1"] --> B["Survey"]
+  A --> C["fMRI"]
+  A --> D["Task_1"]
+  A --> E["Task_2"]
+  B --> P["Data_pipeline_1"]
+  C --> Q["Data_pipeline_2"]
+  D --> R["Data_pipeline_3"]
+  E --> R
+  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
+  P --> G["Analysis_1"]
+  Q & R --> H["Analysis_2"]
+  G & H --> I["Poster"]
+  G & H --> J["Paper"]
+  C & D & G & H & F --> K["Data repository"]
+```
+
+---
+
+```{mermaid}
+%%| label: fig-one-project-w-sharing-multirepo
+%%| fig-cap: "Planned data sharing in multiple repositories"
+flowchart LR
+  A["Project_1"] --> B["Survey"]
+  A --> C["fMRI"]
+  A --> D["Task_1"]
+  A --> E["Task_2"]
+  B --> P["Data_pipeline_1"]
+  C --> Q["Data_pipeline_2"]
+  D --> R["Data_pipeline_3"]
+  E --> R
+  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
+  P --> G["Analysis_1"]
+  Q & R --> H["Analysis_2"]
+  G & H --> I["Poster"]
+  G & H --> J["Paper"]
+  B & C & D & G & H & F --> K["OpenNeuro"]
+  B --> L["OSF"]
+  K --- L
+```
+
+---
+
+::: {.callout-important}
+## Lesson learned
+
+Plan your workflow in as much detail as you possibly can before you start.
+
+:::
+
+::: {.fragment}
+::: {.callout-important}
+## Lesson learned
+
+Plans change.
+
+So, evaluate, revise, and update.
+
+Document what you changed, when, and why.
+
+:::
+:::
+
+## Lessons learned
+
+::: {.callout-note}
+## Recommended practice
+
+Version your protocol.
+
+*Manual is fine*: e.g, `nsf-2412345-protocol-2025-12-02v01.docx`.
+
+*Automated is better*: 
+
+Google Docs keeps version histories. 
+
+[Quarto](https://quarto.org) enables git-versioned web sites as protocols.
+:::
+
+## Examples
+
+::: {.incremental}
+- Open Scholarship Survey (2022-23)
+  - [IRB protocol](https://penn-state-open-science.github.io/survey-fall-2022/hrp-591.html) + [data processing](https://penn-state-open-science.github.io/survey-fall-2022/data-gathering-and-cleaning.html) and [visualization pipeline](https://penn-state-open-science.github.io/survey-fall-2022/data-visualization.html)
+- Play & Learning Across a Year (PLAY Project)
+  - Project [site](https://play-project.org) and [protocol](https://play-project.org/collection.html)
+  - Survey [data cleaning and visualization](https://play-project.org/KoBoToolbox)
+
+:::
+
+
+---
+
+{{< video https://www.anhourinthelife.org/img/PLAY-parents-noaudio.mp4 >}}
+  
+---
+
+:::: {.columns}
+::: {.column width=50%}
+![@Soska2021-mh Figure 1](include/img/soska-etal-fig-01.png)
+:::
+::: {.column width=50%}
+![@Soska2021-mh Figure 3](include/img/soska-etal-fig-03.png)
+:::
+::::
+
+---
+
+![@Gilmore2017-wd](include/img/nat-hum-beh.jpg){#fig-gilmore-adolph-video-can width="75%"}
+
+---
+
+{{< video https://databrary.org/assets/example-video-1-Dyoh4lqO.mp4 >}}
+
+-- @UnknownUnknown-vx
+
+---
+
+{{< video include/vid/collection-scheduling-initialrecruiting-phonecall-english.mp4 >}}
+
+-- @UnknownUnknown-ik
+
+---
+
+:::: {.columns}
+::: {.column width=50%}
+{{< video include/vid/Head-camera-with-optic-flow-overlay.mp4 >}}
+:::
+::: {.column width=50%}
+{{< video include/vid/Head-camera-video-with-optic-flow-pattern-estimate.mp4 >}}
+
+{{< video include/vid/Head-camera-video-with-optic-flow-speed-estimate.mp4 >}}
+:::
+::::
+
+-- @Gilmore2015-oj
+
+---
+
+::: {.callout-important}
+## Lesson learned
+
+Well-documented plans & practices can be reused for new projects.
+
+Be kind to your future (forgetful) self.
+
+:::
+
+## Automate & Standardize
+
+- Script/code *everything* you possibly can
+  - Learn R, Python, shell scripting
+  - You can do it!
+  - Build things you actually need
+  
+## Automate & Standardize
+
+```bash
+# These are bash shell commands
+mkdir -p project/{admin,protocol,data}
+mkdir -p project/admin/{financial,irb,meeting_documents,recruitment,research_assistants}
+mkdir -p project/data/sub-control01/{anat,func,dwi,fmap}
+```
+
+## Automate & Standardize
+
+![Acknowledgement: Alaina Pearce](include/img/tree.png){#fig-project-mgmt-directory-structure width="75%"}
+
+## Automate & Standardize
+
+- Capture data in electronic form as much as possible
+  - e.g., Qualtrics, Google Forms, REDCap, [KoBoToolbox](https://kobotoolbox.org)
+- Let the computer do tedious, repetitive, error-prone work
+  - e.g., data export & cleaning
+  - Code as documentation
+
+## Examples
+
+- Project-specific R packages (A. Pearce)
+- Use [REDcap](https://project-redcap.org) to capture project metadata
+- Executable [Quarto](https://quarto.org) documents
+  - Bootcamp 2026 [site](https://penn-state-open-science.github.io/bootcamp-2026/)
+  - Bootcamp 2026 Workshops [I](https://penn-state-open-science.github.io/bootcamp-2026-quarto-I/) and [II](https://penn-state-open-science.github.io/bootcamp-2025-quarto-II/)
+  - Open Scholarship [Survey](https://penn-state-open-science.github.io/survey-fall-2022/)
+
+## Common themes
+
+- Raw data live in secure place
+- Use API calls to gather, clean, process
+
+::: {.fragment}
+::: {.callout-important}
+## (Painful) lesson learned
+
+APIs can change, so be prepared to update your procedures & code.
+
+:::
+:::
+
+# Where
+
+## Big picture
+
+- Privacy & permission
+- Type(s) of data
+- Repositories
+- Data papers
+
+## Privacy & permission
+
+- Ask your participants
+- Broad consent vs. narrow
+- Store sharing permission & consider sharing it
+- Pseudo-anonymizing
+  - May or may not be required
+
+## Type(s) of data
+
+- Imaging data
+- Non-identifiable
+- Identifiable
+
+## Imaging data 
+
+:::: {.columns}
+::: {.column width=40%}
+- [OpenNeuro](https://openneuro.org)
+- Use [BIDS](https://bids.neuroimaging.io)
+:::
+::: {.column width=60%}
+![<https://openneuro.org>](include/img/openneuro.png){#fig-openneuro}
+:::
+::::
+
+## Imaging data
+
+:::: {.columns}
+::: {.column width=40%}
+- Use [BIDS](https://bids.neuroimaging.io)
+:::
+::: {.column width=60%}
+![](https://bids.neuroimaging.io/assets/img/dicom-reorganization-transparent-black_1000x477.png#only-light){#fig-bids}
+:::
+::::
+
+## Non-identifiable data
+
+:::: {.columns}
+::: {.column width=40%}
+- [Level 1](https://security.psu.edu/awareness/icdt/) in Penn State's data classification
+- PSU's [ScholarSphere](https://scholarsphere.psu.edu)
+:::
+::: {.column width=60%}
+![<https://scholarsphere.psu.edu>](include/img/scholarsphere.png){#fig-scholarsphere}
+:::
+::::
+
+## Non-identifable data
+
+:::: {.columns}
+::: {.column width=40%}
+- [~~Open Science Framework (OSF)~~](https://osf.io)
+:::
+::: {.column width=60%}
+![<https://osf.io>](include/img/osf.png)
+:::
+::::
+
+## Sharing identifiable data
+
+:::: {.columns}
+::: {.column width=50%}
+- [Inter-university Consortium for Political and Social Research (ICPSR)](https://www.icpsr.umich.edu/sites/icpsr/home)
+:::
+::: {.column width=50%}
+![<https://www.icpsr.umich.edu>](include/img/icpsr.png)
+:::
+::::
+  
+## Identifiable data
+
+:::: {.columns}
+::: {.column width=50%}
+- Especially video & audio^[Plus birth dates, test dates, address/geo information.]
+- Can be shared *unaltered*
+:::
+::: {.column width=50%}
+![Giphy](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTFjajdmN3pmbDEzZ3BwYXprOXhoemI0ZG5xbGw4eXlucG85bGhhZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/daPCSjwus6UR2JxRX1/giphy.gif)
+:::
+::::
 
 # 
 
@@ -22,7 +603,26 @@ format:
 - Housed at NYU
 - Specialized for storing, sharing *identifiable data*
 
+## How!?
+
+- Restricted access
+- Explicit sharing release
+- Institutional agreements
+
 ## Restricted access
+
+```{r}
+#| message: false
+#| include: false
+library(databraryr)
+
+login_db(email = Sys.getenv("DATABRARY_LOGIN"),
+         password = Sys.getenv("DATABRARY_PASSWORD"),
+         client_id = Sys.getenv("DATABRARY_CLIENT_ID"),
+         client_secret = Sys.getenv("DATABRARY_CLIENT_SECRET"),
+         store = FALSE,
+         overwrite = FALSE)
+```
 
 ```{r}
 #| echo: true
@@ -70,18 +670,6 @@ release_levels <- databraryr::get_release_levels()
 ## By the numbers
 
 ```{r}
-#| message: false
-#| include: false
-library(databraryr)
-login_db(email = Sys.getenv("DATABRARY_LOGIN"),
-         password = Sys.getenv("DATABRARY_PASSWORD"),
-         client_id = Sys.getenv("DATABRARY_CLIENT_ID"),
-         client_secret = Sys.getenv("DATABRARY_CLIENT_SECRET"),
-         store = FALSE,
-         overwrite = FALSE)
-```
-
-```{r}
 #| echo: true
 db_stats <- databraryr::get_db_stats()
 ```
@@ -91,9 +679,7 @@ db_stats <- databraryr::get_db_stats()
 - *N*=`{r} db_stats$affiliates` staff & trainees
 - *N*=`{r} format(db_stats$hours_of_recordings, big.mark = ",")` hours of shared recordings
 
-## Growth
-
-## @ Penn State {.scrollable}
+## Databrary @ Penn State {.scrollable}
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -123,7 +709,7 @@ leaflet() %>%
 :::
 ::::
 
-## @ Penn State {.scrollable}
+## Researchers @ Penn State {.scrollable}
 
 ```{r}
 #| echo: true
@@ -144,12 +730,84 @@ psu_ais |>
   scroll_box(width = "900px", height = "600px")
 ```
 
-## Some illustrative datasets
+## Data @ Penn State
+
+```{r}
+#| echo: true
+source("R/get_institution_user_stats.R")
+psu_stats <- get_institution_statistics(12)
+psu_user_stats <- get_institution_user_stats(12)
+user_uploaded_data_footprint <- sum(psu_user_stats$uploaded_data_footprint)
+user_uploaded_n_files <- sum(psu_user_stats$files_number)
+user_volumes_number <- sum(psu_user_stats$volumes_number)
+```
+
+- Researcher "owned"^[Under PSU policy, researchers do not own their data. See [RP15](https://policy.psu.edu/policies/rp15).]
+  - `{r} format(user_uploaded_data_footprint/1e9, digits = 4, big.mark = ",")` GB of data, *n*=`{r} format(user_uploaded_n_files, digits = 5, big.mark = ",")` files in *n*=`{r} format(user_volumes_number, digits = 3, big.mark = ",")` volumes/datasets
+- Institutionally "owned"^[Investigator(s) no longer affiliated with Penn State.]
+  - `{r} format(psu_stats$uploaded_data_footprint/1e9, digits = 4, big.mark = ",")` GB, *n*=`{r} format(psu_stats$files_number, digits = 5, big.mark = ",")` files in *n*=`{r} format(psu_stats$volumes_number, digits = 3, big.mark = ",")` volume/dataset
+  
+## Examples
 
 ## New features
 
-- Secure API for scriptable interactions (up/download)
+- Secure API for scriptable interactions (up/download)^[NSF 244730]
   - *databraryr* (R)
   - *databrarypy* (Python)
-- Custom Collections
-  - Curate your own set of clips, datasets
+- Custom collections
+  - Curate your own set of clips, datasets^[NSF 244730]
+- External integrations
+  - Add geographically-informed data from U.S. Census^[In collaboration with [The ARDA](https://thearda.org); financial support from the John S. Templeton Foundation.]
+  
+# Play & Learning Across a Year (PLAY)
+
+## PLAY Overview
+
+# What to share
+
+# Why share
+
+# The future of open psychological science
+
+## Imagine...
+
+:::: {.columns}
+::: {.column width=50%}
+- There's no paywalls
+- No "data on request" statements
+- Openly shared protocols
+- Data documented, too...
+:::
+::: {.column width=50%}
+![Wikipedia^[By Bob Gruen; Distributed by Capitol Records - Listen to This Press Kit (1974)Immediate (iHeart), Public Domain, https://commons.wikimedia.org/w/index.php?curid=175003052]](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg/1280px-John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail){#fig-john-lennon-wikipedia width="75%"}
+:::
+::::
+
+## Imagine...
+
+- Every paper comes with openly shared data
+  - Data papers^[e.g., *Scientific Data*] & preregistrationstandard
+- Linked to protocols & code^[I favor [Quarto](https://quarto.org)] that can reproduce all statistical analyses and figures
+- Openly shared videos of experiments, displays^[Remember [Clever Hans](https://en.wikipedia.org/wiki/Clever_Hans)?]
+- Aggregation of datasets for meta/mega/multiverse analyses made *much* easier
+
+## Imagine...
+
+- Embedding *reproducibility* & *replication* into (undergrad & grad) curriculum [@Frank2012-fc]
+  - Make data visualization & [management best practices](https://penn-state-open-science.github.io/posts/2025-11-17-sleic-workshop.html) prominent
+  - 1st semester projects *reproduce* a prior analysis
+  - 1-2 year/master's project conducts an exact^[As possible.] *replication*^[At least for the first study of a multi-study project]
+
+# Wrap-up
+
+## Main points
+
+- Openly sharing data, protocols, code is an investment in the future of discovery
+- Open sharing strengthens your research
+- Restricted access sharing protects participants and their privacy
+- Databrary enables open sharing of research data
+
+# Resources
+
+## References
+

@@ -101,7 +101,27 @@
     code span.va { color: #111111; } /* Variable */
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-16ee20bd6580499a27acc51087a76a1e.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -196,6 +216,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <link href="index_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
   <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
   <script src="index_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -215,26 +238,914 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Sharing is caring</h1>
+  <p class="subtitle">Insights from the front lines of the open science revolution</p>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="preliminaries" class="slide level2">
-<h2>Preliminaries</h2>
+<section>
+<section id="preliminaries" class="title-slide slide level1 center">
+<h1>Preliminaries</h1>
+
 </section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
+<section class="slide level2">
+
+<iframe data-external="1" src="https://www.youtube.com/embed/66oNv_DJuPc" width="100%" height="70%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>– <span class="citation" data-cites="NYU_Health_Sciences_Library2013-gp">NYU Health Sciences Library (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span></p>
+</section>
+<section class="slide level2">
+
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-cog-bbag-talk-qr" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-cog-bbag-talk-qr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="include/figfig-cog-bbag-talk-qr-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/"><img data-src="include/figfig-cog-bbag-talk-qr-1.png" width="960"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cog-bbag-talk-qr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <a href="https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/" class="uri">https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/</a>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="agenda" class="slide level2">
+<h2>Agenda</h2>
 <ul>
-<li>Databrary</li>
+<li>My (not so) hidden one</li>
+<li>How (to share)</li>
+<li>Where (to share)</li>
+<li>What (to share)</li>
+<li>The future of open psychological science</li>
+</ul>
+</section></section>
+<section>
+<section id="my-not-so-hidden-agenda" class="title-slide slide level1 center">
+<h1>My (not so) hidden agenda</h1>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/osi-home.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="https://penn-state-open-science.github.io"><img data-src="include/img/osi-home.png" alt="https://penn-state-open-science.github.io"></a></p>
+<figcaption><a href="https://penn-state-open-science.github.io" class="uri">https://penn-state-open-science.github.io</a></figcaption>
+</figure>
+</div>
+</section>
+<section id="best-practices-in" class="slide level2">
+<h2>Best practices in</h2>
+<ul>
+<li class="fragment">Project management</li>
+<li class="fragment"><span class="math inline">\(+\)</span> Data management</li>
+<li class="fragment"><span class="math inline">\(\rightarrow\)</span> Sharing</li>
 </ul>
 </section>
+<section id="sharing" class="slide level2">
+<h2>Sharing…</h2>
+<ul>
+<li class="fragment">Accelerates discovery</li>
+<li class="fragment">Bolsters credibility</li>
+</ul>
+</section>
+<section id="an-ethical-thing-to-do" class="slide level2">
+<h2>An ethical thing to do</h2>
+<blockquote>
+<p>Whereas regulators of human subjects research often view data sharing solely in terms of potential risks to subjects, we argue that the <strong>principles of human subject research require an analysis of both risks and benefits</strong>…</p>
+</blockquote>
+<p>– <span class="citation" data-cites="Brakewood2013-wj">Brakewood &amp; Poldrack (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>…such an analysis suggests that <strong>researchers may have a positive duty to share data</strong> in order to maximize the contribution that individual participants have made.</p>
+</blockquote>
+<p>– <span class="citation" data-cites="Brakewood2013-wj">Brakewood &amp; Poldrack (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span></p>
+</section>
+<section id="ethical-data-sharing" class="slide level2">
+<h2>Ethical data sharing</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>F</strong>indable</li>
+<li><strong>A</strong>ccessible</li>
+<li><strong>I</strong>nteroperable</li>
+<li><strong>R</strong>eusable</li>
+</ul>
+<p>– <span class="citation" data-cites="Wilkinson2016-qr">Wilkinson et al. (<a href="#/references" role="doc-biblioref" onclick="">2016</a>)</span></p>
+</div><div class="column" style="width:50%;">
+<div id="fig-care-principles" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-care-principles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="include/img/care-principles-datapng.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: @Carroll2020-mo"><img data-src="include/img/care-principles-datapng.png" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-care-principles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: <span class="citation" data-cites="Carroll2020-mo">Carroll et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span>
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="section-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div id="fig-tenopir-2020-fig-7" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-tenopir-2020-fig-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0229003.g007&amp;type=large" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: @Tenopir2020-mq Fig 7"><img data-src="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0229003.g007&amp;type=large" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tenopir-2020-fig-7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: <span class="citation" data-cites="Tenopir2020-mq">Tenopir et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span> Fig 7
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/tenopir-2000-fig-xx.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="@Tenopir2020-mq Fig 8"><img data-src="include/img/tenopir-2000-fig-xx.png" style="width:150.0%" alt="Tenopir et al. (2020) Fig 8"></a></p>
+<figcaption><span class="citation" data-cites="Tenopir2020-mq">Tenopir et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span> Fig 8</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/tenopir-2000-fig-xx.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="@Tenopir2020-mq"><img data-src="include/img/tenopir-2000-fig-xx.png" alt="Tenopir et al. (2020)"></a></p>
+<figcaption><span class="citation" data-cites="Tenopir2020-mq">Tenopir et al. (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="fragment">
+<ul>
+<li>Must publish first</li>
+<li>No time, funding</li>
+<li>No permission</li>
+<li>Not required</li>
+<li>No place to put</li>
+<li>Insufficient skills</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-title.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="@Houtkoop2018-tl"><img data-src="include/img/houtkoop-2018-title.png" alt="Houtkoop et al. (2018)"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl3aDlrZWZ2Nm9tcXh1czhvYjk4bjJlc2M3emR5dG96NnpldWx0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl3aDlrZWZ2Nm9tcXh1czhvYjk4bjJlc2M3emR5dG96NnpldWx0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif" class="quarto-figure quarto-figure-center"></a></p>
+</figure>
+</div>
+</section>
+<section id="section-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-03a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="@Houtkoop2018-tl Figure 3a"><img data-src="include/img/houtkoop-2018-fig-03a.png" alt="Houtkoop et al. (2018) Figure 3a"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3a</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-6" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-03a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="@Houtkoop2018-tl Figure 3a"><img data-src="include/img/houtkoop-2018-fig-03a.png" alt="Houtkoop et al. (2018) Figure 3a"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3a</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="fragment">
+<ul>
+<li>Misinterpretations of the data</li>
+<li>Scooped</li>
+<li>Control over IP</li>
+<li>Unintended secondary use</li>
+<li>Invalid conclusions, errors</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="section-7" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-03b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="@Houtkoop2018-tl Figure 3b"><img data-src="include/img/houtkoop-2018-fig-03b.png" alt="Houtkoop et al. (2018) Figure 3b"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3b</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-8" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-03b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="@Houtkoop2018-tl Figure 3b"><img data-src="include/img/houtkoop-2018-fig-03b.png" alt="Houtkoop et al. (2018) Figure 3b"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3b</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="fragment">
+<ul>
+<li>Invalid conclusions</li>
+<li>Control over IP</li>
+<li>Errors</li>
+<li>Misinterpretation</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="moving-the-needle" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Moving the needle</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="@Houtkoop2018-tl Figure 3b"><img data-src="include/img/houtkoop-2018-fig-04.png" alt="Houtkoop et al. (2018) Figure 3b"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3b</figcaption>
+</figure>
+</div>
+</section>
+<section id="section-9" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title"></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="@Houtkoop2018-tl Figure 3b"><img data-src="include/img/houtkoop-2018-fig-04.png" alt="Houtkoop et al. (2018) Figure 3b"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3b</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="fragment">
+<ul>
+<li>Required by funder, journal, institution</li>
+<li>Encouraged by funder, journal, institution</li>
+<li>Easy, shown how</li>
+<li>Garner citations, recognition, bigger/more grants</li>
+</ul>
+</div>
+</div></div>
+</section>
+<section id="funders-think-you-should" class="slide level2">
+<h2>Funders think you should</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/nsf-data-sharing.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="@UnknownUnknown-da"><img data-src="include/img/nsf-data-sharing.png" alt="“Preparing your data management and sharing plan” (n.d.)"></a></p>
+<figcaption><span class="citation" data-cites="UnknownUnknown-da"><span>“Preparing your data management and sharing plan”</span> (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/nih-2003-policy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="@UnknownUnknown-zt"><img data-src="include/img/nih-2003-policy.png" alt="“Data management &amp; sharing policy overview” (n.d.)"></a></p>
+<figcaption><span class="citation" data-cites="UnknownUnknown-zt"><span>“Data management &amp; sharing policy overview”</span> (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="nih-data-management-and-sharing-plan-dms" class="slide level2">
+<h2>NIH Data Management and Sharing Plan (DMS)</h2>
+<blockquote>
+<p>to promote the management and sharing of scientific data generated from NIH-funded or conducted research.</p>
+</blockquote>
+<p>– <span class="citation" data-cites="National-Institutes-of-HealthUnknown-ys">National Institutes of Health (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span></p>
+</section>
+<section id="nih-data-management-and-sharing-plan-dms-1" class="slide level2">
+<h2>NIH Data Management and Sharing Plan (DMS)</h2>
+<p><a href="include/img/nih-dms-2023-01-25.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img data-src="include/img/nih-dms-2023-01-25.png"></a></p>
+</section>
+<section id="nih-data-management-and-sharing-plan-dms-2" class="slide level2">
+<h2>NIH Data Management and Sharing Plan (DMS)</h2>
+<ul>
+<li>2p DMS plan <strong>required</strong></li>
+<li>Must justify reasons if not sharing</li>
+<li>Sharing plans become formal part of award agreement</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/psu-rdm-policy.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="@UnknownUnknown-hn"><img data-src="include/img/psu-rdm-policy.png" alt="“Research data management” (n.d.)"></a></p>
+<figcaption><span class="citation" data-cites="UnknownUnknown-hn"><span>“Research data management”</span> (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/houtkoop-2018-fig-04.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="@Houtkoop2018-tl Figure 3b"><img data-src="include/img/houtkoop-2018-fig-04.png" alt="Houtkoop et al. (2018) Figure 3b"></a></p>
+<figcaption><span class="citation" data-cites="Houtkoop2018-tl">Houtkoop et al. (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span> Figure 3b</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<ul>
+<li><em>Required by funder</em>, journal, institution</li>
+<li><em>Encouraged by funder</em>, <em>journal</em>, <em>institution</em></li>
+</ul>
+<ul>
+<li class="fragment"><strong>Easy, shown how</strong></li>
+<li class="fragment"><strong>Garner citations, recognition, bigger/more grants</strong></li>
+</ul>
+</div></div>
+</section></section>
 <section>
-<section id="section" class="title-slide slide level1 center">
+<section id="how" class="title-slide slide level1 center">
+<h1>How</h1>
+
+</section>
+<section class="slide level2">
+
+<div id="fig-giphy-messy-room" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-giphy-messy-room-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjRrM2I1aHE4amd3cno5dmtpMmM2eG5wbDI3ZGhudGxrZ24xc2t2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nBjOqZ6h0ili0/giphy.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Figure&nbsp;4: Giphy"><img data-src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjRrM2I1aHE4amd3cno5dmtpMmM2eG5wbDI3ZGhudGxrZ24xc2t2NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nBjOqZ6h0ili0/giphy.gif" style="width:65.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-giphy-messy-room-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Giphy
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<div id="fig-we-are-too-busy" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-we-are-too-busy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://headguruteacher.files.wordpress.com/2017/02/9464b325-d2f4-4604-8258-82093bf93af6.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Figure&nbsp;5: https://teacherhead.com/2017/02/27/reinventing-the-wheel-again/"><img data-src="https://headguruteacher.files.wordpress.com/2017/02/9464b325-d2f4-4604-8258-82093bf93af6.jpg"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-we-are-too-busy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: https://teacherhead.com/2017/02/27/reinventing-the-wheel-again/
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="pay-me-now-or-pay-me-later" class="slide level2">
+<h2>Pay me now, or pay me later</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/Ij1yDpfZI8Q?si=69indipc6N5Vsc7s" width="100%" height="70%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>– <span class="citation" data-cites="PathfindersPerform2013-cy">PathfindersPerform (<a href="#/references" role="doc-biblioref" onclick="">2013</a>)</span></p>
+</section>
+<section id="principles" class="slide level2">
+<h2>Principles</h2>
+<ul>
+<li>Plan your work, work your plan</li>
+<li>“Good enough” practices</li>
+<li>Document</li>
+<li>Automate</li>
+<li>Get credit</li>
+</ul>
+</section>
+<section id="plan-your-work" class="slide level2">
+<h2>Plan your work</h2>
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-proposal-to-project" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-proposal-to-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-proposal-to-project">flowchart LR
+  A(["Idea"]) --&gt; B["Proposal"]
+  B --&gt; C("Project_1")
+  B --&gt; D("Project_2")
+  D --&gt; E("Paper_2")
+  C --&gt; F("Paper_1")
+  E --&gt; G("Fame &amp; Glory")
+  F --&gt; G
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-proposal-to-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: From proposal to project
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-proposal-to-project-realistic" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-proposal-to-project-realistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-proposal-to-project-realistic">flowchart LR
+  A(["Idea"]) --&gt; B["Proposal"]
+  B --&gt; C("Project_1")
+  B --&gt; D("Project_2")
+  B --&gt; I("IRB protocol")
+  G(["Data mgmt plan"]) --&gt; B
+  G &lt;--&gt; I
+  C --&gt; I
+  D --&gt; I
+  D --&gt; E("Paper_2")
+  C --&gt; F("Paper_1")
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-proposal-to-project-realistic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: From proposal to project: More realistic
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-one-project" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-one-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-one-project">flowchart LR
+  A["Project_1"] --&gt; B["Survey"]
+  A --&gt; C["fMRI"]
+  A --&gt; D["Task_1"]
+  A --&gt; E["Task_2"]
+  B --&gt; P["Data_pipeline_1"]
+  C --&gt; Q["Data_pipeline_2"]
+  D --&gt; R["Data_pipeline_3"]
+  E --&gt; R
+  F["Data mgmt plan"] --- B &amp; C &amp; D &amp; E &amp; P &amp; Q &amp; R
+  P --&gt; G["Analysis_1"]
+  Q &amp; R --&gt; H["Analysis_2"]
+  G &amp; H --&gt; I["Poster"]
+  G &amp; H --&gt; J["Paper"]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-project-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: One project workflow
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-one-project-w-sharing" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-one-project-w-sharing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-one-project-w-sharing">flowchart TD
+  A["Project_1"] --&gt; B["Survey"]
+  A --&gt; C["fMRI"]
+  A --&gt; D["Task_1"]
+  A --&gt; E["Task_2"]
+  B --&gt; P["Data_pipeline_1"]
+  C --&gt; Q["Data_pipeline_2"]
+  D --&gt; R["Data_pipeline_3"]
+  E --&gt; R
+  F["Data mgmt plan"] --- B &amp; C &amp; D &amp; E &amp; P &amp; Q &amp; R
+  P --&gt; G["Analysis_1"]
+  Q &amp; R --&gt; H["Analysis_2"]
+  G &amp; H --&gt; I["Poster"]
+  G &amp; H --&gt; J["Paper"]
+  C &amp; D &amp; G &amp; H &amp; F --&gt; K["Data repository"]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-project-w-sharing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Planned data sharing to a repository
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-one-project-w-sharing-multirepo" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-one-project-w-sharing-multirepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-one-project-w-sharing-multirepo">flowchart LR
+  A["Project_1"] --&gt; B["Survey"]
+  A --&gt; C["fMRI"]
+  A --&gt; D["Task_1"]
+  A --&gt; E["Task_2"]
+  B --&gt; P["Data_pipeline_1"]
+  C --&gt; Q["Data_pipeline_2"]
+  D --&gt; R["Data_pipeline_3"]
+  E --&gt; R
+  F["Data mgmt plan"] --- B &amp; C &amp; D &amp; E &amp; P &amp; Q &amp; R
+  P --&gt; G["Analysis_1"]
+  Q &amp; R --&gt; H["Analysis_2"]
+  G &amp; H --&gt; I["Poster"]
+  G &amp; H --&gt; J["Paper"]
+  B &amp; C &amp; D &amp; G &amp; H &amp; F --&gt; K["OpenNeuro"]
+  B --&gt; L["OSF"]
+  K --- L
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-one-project-w-sharing-multirepo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Planned data sharing in multiple repositories
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lesson learned</strong></p>
+</div>
+<div class="callout-content">
+<p>Plan your workflow in as much detail as you possibly can before you start.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lesson learned</strong></p>
+</div>
+<div class="callout-content">
+<p>Plans change.</p>
+<p>So, evaluate, revise, and update.</p>
+<p>Document what you changed, when, and why.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lessons-learned" class="slide level2">
+<h2>Lessons learned</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Recommended practice</strong></p>
+</div>
+<div class="callout-content">
+<p>Version your protocol.</p>
+<p><em>Manual is fine</em>: e.g, <code>nsf-2412345-protocol-2025-12-02v01.docx</code>.</p>
+<p><em>Automated is better</em>:</p>
+<p>Google Docs keeps version histories.</p>
+<p><a href="https://quarto.org">Quarto</a> enables git-versioned web sites as protocols.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li class="fragment">Open Scholarship Survey (2022-23)
+<ul>
+<li class="fragment"><a href="https://penn-state-open-science.github.io/survey-fall-2022/hrp-591.html">IRB protocol</a> + <a href="https://penn-state-open-science.github.io/survey-fall-2022/data-gathering-and-cleaning.html">data processing</a> and <a href="https://penn-state-open-science.github.io/survey-fall-2022/data-visualization.html">visualization pipeline</a></li>
+</ul></li>
+<li class="fragment">Play &amp; Learning Across a Year (PLAY Project)
+<ul>
+<li class="fragment">Project <a href="https://play-project.org">site</a> and <a href="https://play-project.org/collection.html">protocol</a></li>
+<li class="fragment">Survey <a href="https://play-project.org/KoBoToolbox">data cleaning and visualization</a></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://www.anhourinthelife.org/img/PLAY-parents-noaudio.mp4"></video>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/soska-etal-fig-01.png" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="@Soska2021-mh Figure 1"><img data-src="include/img/soska-etal-fig-01.png" alt="Soska et al. (2021) Figure 1"></a></p>
+<figcaption><span class="citation" data-cites="Soska2021-mh">Soska et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> Figure 1</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/soska-etal-fig-03.png" class="lightbox" data-gallery="quarto-lightbox-gallery-23" title="@Soska2021-mh Figure 3"><img data-src="include/img/soska-etal-fig-03.png" alt="Soska et al. (2021) Figure 3"></a></p>
+<figcaption><span class="citation" data-cites="Soska2021-mh">Soska et al. (<a href="#/references" role="doc-biblioref" onclick="">2021</a>)</span> Figure 3</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level2">
+
+<div id="fig-gilmore-adolph-video-can" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-gilmore-adolph-video-can-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="include/img/nat-hum-beh.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-24" title="Figure&nbsp;11: @Gilmore2017-wd"><img data-src="include/img/nat-hum-beh.jpg" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-gilmore-adolph-video-can-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: <span class="citation" data-cites="Gilmore2017-wd">Gilmore &amp; Adolph (<a href="#/references" role="doc-biblioref" onclick="">2017</a>)</span>
+</figcaption>
+</figure>
+</div>
+</section>
+<section class="slide level2">
+
+<video id="video_shortcode_videojs_video2" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://databrary.org/assets/example-video-1-Dyoh4lqO.mp4"></video>
+<p>– <span class="citation" data-cites="UnknownUnknown-vx"><span>“Databrary”</span> (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span></p>
+</section>
+<section class="slide level2">
+
+<video id="video_shortcode_videojs_video3" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="include/vid/collection-scheduling-initialrecruiting-phonecall-english.mp4"></video>
+<p>– <span class="citation" data-cites="UnknownUnknown-ik"><span>“PLAY project”</span> (<a href="#/references" role="doc-biblioref" onclick="">n.d.</a>)</span></p>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<video id="video_shortcode_videojs_video4" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="include/vid/Head-camera-with-optic-flow-overlay.mp4"></video>
+</div><div class="column" style="width:50%;">
+<video id="video_shortcode_videojs_video5" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="include/vid/Head-camera-video-with-optic-flow-pattern-estimate.mp4"></video>
+<video id="video_shortcode_videojs_video6" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="include/vid/Head-camera-video-with-optic-flow-speed-estimate.mp4"></video>
+</div></div>
+<p>– <span class="citation" data-cites="Gilmore2015-oj">Gilmore, Raudies, &amp; Jayaraman (<a href="#/references" role="doc-biblioref" onclick="">2015</a>)</span></p>
+</section>
+<section class="slide level2">
+
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Lesson learned</strong></p>
+</div>
+<div class="callout-content">
+<p>Well-documented plans &amp; practices can be reused for new projects.</p>
+<p>Be kind to your future (forgetful) self.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="automate-standardize" class="slide level2">
+<h2>Automate &amp; Standardize</h2>
+<ul>
+<li>Script/code <em>everything</em> you possibly can
+<ul>
+<li>Learn R, Python, shell scripting</li>
+<li>You can do it!</li>
+<li>Build things you actually need</li>
+</ul></li>
+</ul>
+</section>
+<section id="automate-standardize-1" class="slide level2">
+<h2>Automate &amp; Standardize</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># These are bash shell commands</span></span>
+<span id="cb1-2"><a href=""></a><span class="fu">mkdir</span> <span class="at">-p</span> project/<span class="dt">{admin</span><span class="op">,</span><span class="dt">protocol</span><span class="op">,</span><span class="dt">data}</span></span>
+<span id="cb1-3"><a href=""></a><span class="fu">mkdir</span> <span class="at">-p</span> project/admin/<span class="dt">{financial</span><span class="op">,</span><span class="dt">irb</span><span class="op">,</span><span class="dt">meeting_documents</span><span class="op">,</span><span class="dt">recruitment</span><span class="op">,</span><span class="dt">research_assistants}</span></span>
+<span id="cb1-4"><a href=""></a><span class="fu">mkdir</span> <span class="at">-p</span> project/data/sub-control01/<span class="dt">{anat</span><span class="op">,</span><span class="dt">func</span><span class="op">,</span><span class="dt">dwi</span><span class="op">,</span><span class="dt">fmap}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="automate-standardize-2" class="slide level2">
+<h2>Automate &amp; Standardize</h2>
+<div id="fig-project-mgmt-directory-structure" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-project-mgmt-directory-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="include/img/tree.png" class="lightbox" data-gallery="quarto-lightbox-gallery-25" title="Figure&nbsp;12: Acknowledgement: Alaina Pearce"><img data-src="include/img/tree.png" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-project-mgmt-directory-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Acknowledgement: Alaina Pearce
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="automate-standardize-3" class="slide level2">
+<h2>Automate &amp; Standardize</h2>
+<ul>
+<li>Capture data in electronic form as much as possible
+<ul>
+<li>e.g., Qualtrics, Google Forms, REDCap, <a href="https://kobotoolbox.org">KoBoToolbox</a></li>
+</ul></li>
+<li>Let the computer do tedious, repetitive, error-prone work
+<ul>
+<li>e.g., data export &amp; cleaning</li>
+<li>Code as documentation</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples-1" class="slide level2">
+<h2>Examples</h2>
+<ul>
+<li>Project-specific R packages (A. Pearce)</li>
+<li>Use <a href="https://project-redcap.org">REDcap</a> to capture project metadata</li>
+<li>Executable <a href="https://quarto.org">Quarto</a> documents
+<ul>
+<li>Bootcamp 2026 <a href="https://penn-state-open-science.github.io/bootcamp-2026/">site</a></li>
+<li>Bootcamp 2026 Workshops <a href="https://penn-state-open-science.github.io/bootcamp-2026-quarto-I/">I</a> and <a href="https://penn-state-open-science.github.io/bootcamp-2025-quarto-II/">II</a></li>
+<li>Open Scholarship <a href="https://penn-state-open-science.github.io/survey-fall-2022/">Survey</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="common-themes" class="slide level2">
+<h2>Common themes</h2>
+<ul>
+<li>Raw data live in secure place</li>
+<li>Use API calls to gather, clean, process</li>
+</ul>
+<div class="fragment">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>(Painful) lesson learned</strong></p>
+</div>
+<div class="callout-content">
+<p>APIs can change, so be prepared to update your procedures &amp; code.</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="where" class="title-slide slide level1 center">
+<h1>Where</h1>
+
+</section>
+<section id="big-picture" class="slide level2">
+<h2>Big picture</h2>
+<ul>
+<li>Privacy &amp; permission</li>
+<li>Type(s) of data</li>
+<li>Repositories</li>
+<li>Data papers</li>
+</ul>
+</section>
+<section id="privacy-permission" class="slide level2">
+<h2>Privacy &amp; permission</h2>
+<ul>
+<li>Ask your participants</li>
+<li>Broad consent vs.&nbsp;narrow</li>
+<li>Store sharing permission &amp; consider sharing it</li>
+<li>Pseudo-anonymizing
+<ul>
+<li>May or may not be required</li>
+</ul></li>
+</ul>
+</section>
+<section id="types-of-data" class="slide level2">
+<h2>Type(s) of data</h2>
+<ul>
+<li>Imaging data</li>
+<li>Non-identifiable</li>
+<li>Identifiable</li>
+</ul>
+</section>
+<section id="imaging-data" class="slide level2">
+<h2>Imaging data</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><a href="https://openneuro.org">OpenNeuro</a></li>
+<li>Use <a href="https://bids.neuroimaging.io">BIDS</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="fig-openneuro" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-openneuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="include/img/openneuro.png" class="lightbox" data-gallery="quarto-lightbox-gallery-26" title="Figure&nbsp;13: https://openneuro.org"><img data-src="include/img/openneuro.png"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-openneuro-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: <a href="https://openneuro.org" class="uri">https://openneuro.org</a>
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="imaging-data-1" class="slide level2">
+<h2>Imaging data</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Use <a href="https://bids.neuroimaging.io">BIDS</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="fig-bids" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-bids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://bids.neuroimaging.io/assets/img/dicom-reorganization-transparent-black_1000x477.png#only-light" class="lightbox" data-gallery="quarto-lightbox-gallery-27" title="Figure&nbsp;14: "><img data-src="https://bids.neuroimaging.io/assets/img/dicom-reorganization-transparent-black_1000x477.png#only-light" id="fig-bids"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-bids-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="non-identifiable-data" class="slide level2">
+<h2>Non-identifiable data</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><a href="https://security.psu.edu/awareness/icdt/">Level 1</a> in Penn State’s data classification</li>
+<li>PSU’s <a href="https://scholarsphere.psu.edu">ScholarSphere</a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div id="fig-scholarsphere" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-scholarsphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="include/img/scholarsphere.png" class="lightbox" data-gallery="quarto-lightbox-gallery-28" title="Figure&nbsp;15: https://scholarsphere.psu.edu"><img data-src="include/img/scholarsphere.png"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scholarsphere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: <a href="https://scholarsphere.psu.edu" class="uri">https://scholarsphere.psu.edu</a>
+</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="non-identifable-data" class="slide level2">
+<h2>Non-identifable data</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><a href="https://osf.io"><del>Open Science Framework (OSF)</del></a></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/osf.png" class="lightbox" data-gallery="quarto-lightbox-gallery-29" title="https://osf.io"><img data-src="include/img/osf.png" alt="https://osf.io"></a></p>
+<figcaption><a href="https://osf.io" class="uri">https://osf.io</a></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="sharing-identifiable-data" class="slide level2">
+<h2>Sharing identifiable data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><a href="https://www.icpsr.umich.edu/sites/icpsr/home">Inter-university Consortium for Political and Social Research (ICPSR)</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="include/img/icpsr.png" class="lightbox" data-gallery="quarto-lightbox-gallery-30" title="https://www.icpsr.umich.edu"><img data-src="include/img/icpsr.png" alt="https://www.icpsr.umich.edu"></a></p>
+<figcaption><a href="https://www.icpsr.umich.edu" class="uri">https://www.icpsr.umich.edu</a></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="identifiable-data" class="slide level2">
+<h2>Identifiable data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Especially video &amp; audio<a href="#/footnotes" class="footnote-ref" id="fnref1" role="doc-noteref" data-footnote-href="#/fn1" onclick=""><sup>1</sup></a></li>
+<li>Can be shared <em>unaltered</em></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTFjajdmN3pmbDEzZ3BwYXprOXhoemI0ZG5xbGw4eXlucG85bGhhZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/daPCSjwus6UR2JxRX1/giphy.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-31" title="Giphy"><img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTFjajdmN3pmbDEzZ3BwYXprOXhoemI0ZG5xbGw4eXlucG85bGhhZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/daPCSjwus6UR2JxRX1/giphy.gif" alt="Giphy"></a></p>
+<figcaption>Giphy</figcaption>
+</figure>
+</div>
+</div></div>
+<aside></aside></section></section>
+<section>
+<section id="section-10" class="title-slide slide level1 center">
 <h1></h1>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><a href="https://databrary.org/assets/logo-nav-dQIvaOqh.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="databrary.org"><img data-src="https://databrary.org/assets/logo-nav-dQIvaOqh.svg" alt="databrary.org"></a></p>
+<p><a href="https://databrary.org/assets/logo-nav-dQIvaOqh.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-32" title="databrary.org"><img data-src="https://databrary.org/assets/logo-nav-dQIvaOqh.svg" alt="databrary.org"></a></p>
 <figcaption><a href="https://databrary.org">databrary.org</a></figcaption>
 </figure>
 </div>
@@ -247,12 +1158,20 @@
 <li>Specialized for storing, sharing <em>identifiable data</em></li>
 </ul>
 </section>
+<section id="how-1" class="slide level2">
+<h2>How!?</h2>
+<ul>
+<li>Restricted access</li>
+<li>Explicit sharing release</li>
+<li>Institutional agreements</li>
+</ul>
+</section>
 <section id="restricted-access" class="slide level2">
 <h2>Restricted access</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>release_levels <span class="ot">&lt;-</span> databraryr<span class="sc">::</span><span class="fu">get_release_levels</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>release_levels <span class="ot">&lt;-</span> databraryr<span class="sc">::</span><span class="fu">get_release_levels</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="columns">
@@ -262,7 +1181,7 @@
 <li><em>Authorized Users</em>: Accessible to Authorized Users (for broad research reuse)</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><a href="include/img/databrary-release-levels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="include/img/databrary-release-levels.png"></a></p>
+<p><a href="include/img/databrary-release-levels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-33"><img data-src="include/img/databrary-release-levels.png"></a></p>
 </div></div>
 </section>
 <section id="restricted-access-1" class="slide level2">
@@ -274,7 +1193,7 @@
 <li><em>Public</em>: Accessible to anyone (e.g., non-identifiable displays)</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<p><a href="include/img/databrary-release-levels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="include/img/databrary-release-levels.png"></a></p>
+<p><a href="include/img/databrary-release-levels.png" class="lightbox" data-gallery="quarto-lightbox-gallery-34"><img data-src="include/img/databrary-release-levels.png"></a></p>
 </div></div>
 </section>
 <section id="explicit-sharing-permission" class="slide level2">
@@ -289,7 +1208,7 @@
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://databrary.org/assets/example-video-1-Dyoh4lqO.mp4"></video>
+<video id="video_shortcode_videojs_video7" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="https://databrary.org/assets/example-video-1-Dyoh4lqO.mp4"></video>
 </div>
 </div></div>
 </section>
@@ -298,39 +1217,36 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a>db_stats <span class="ot">&lt;-</span> databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>db_stats <span class="ot">&lt;-</span> databraryr<span class="sc">::</span><span class="fu">get_db_stats</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
 <li><em>N</em>=910 institutions</li>
-<li><em>N</em>=2,140 institutionally-authorized investigators</li>
-<li><em>N</em>=881 staff &amp; trainees</li>
-<li><em>N</em>=105,880 hours of shared recordings</li>
+<li><em>N</em>=2,137 institutionally-authorized investigators</li>
+<li><em>N</em>=876 staff &amp; trainees</li>
+<li><em>N</em>=105,881 hours of shared recordings</li>
 </ul>
 </section>
-<section id="growth" class="slide level2">
-<h2>Growth</h2>
-</section>
-<section id="penn-state" class="slide level2 scrollable">
-<h2>@ Penn State</h2>
+<section id="databrary-penn-state" class="slide level2 scrollable">
+<h2>Databrary @ Penn State</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>psu_info <span class="ot">&lt;-</span> <span class="fu">get_institution_by_id</span>(<span class="at">institution_id =</span> <span class="dv">12</span>)</span>
-<span id="cb3-2"><a href=""></a><span class="cf">if</span> (psu_info<span class="sc">$</span>has_avatar) {</span>
-<span id="cb3-3"><a href=""></a>  avatar_fn <span class="ot">&lt;-</span> <span class="fu">get_institution_avatar</span>(<span class="dv">12</span>, <span class="at">dest_path =</span> <span class="st">"tmp/psu_avatar.png"</span>)</span>
-<span id="cb3-4"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>psu_info <span class="ot">&lt;-</span> <span class="fu">get_institution_by_id</span>(<span class="at">institution_id =</span> <span class="dv">12</span>)</span>
+<span id="cb4-2"><a href=""></a><span class="cf">if</span> (psu_info<span class="sc">$</span>has_avatar) {</span>
+<span id="cb4-3"><a href=""></a>  avatar_fn <span class="ot">&lt;-</span> <span class="fu">get_institution_avatar</span>(<span class="dv">12</span>, <span class="at">dest_path =</span> <span class="st">"tmp/psu_avatar.png"</span>)</span>
+<span id="cb4-4"><a href=""></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div id="fig-map" class="quarto-float quarto-figure quarto-figure-left" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="tmp/psu_avatar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;1: Penn State avatar downloaded via the Databrary API."><img data-src="tmp/psu_avatar.png" class="quarto-figure quarto-figure-left"></a>
+<a href="tmp/psu_avatar.png" class="lightbox" data-gallery="quarto-lightbox-gallery-35" title="Figure&nbsp;16: Penn State avatar downloaded via the Databrary API."><img data-src="tmp/psu_avatar.png" class="quarto-figure quarto-figure-left"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Penn State avatar downloaded via the Databrary API.
+Figure&nbsp;16: Penn State avatar downloaded via the Databrary API.
 </figcaption>
 </figure>
 </div>
@@ -338,33 +1254,33 @@ Figure&nbsp;1: Penn State avatar downloaded via the Databrary API.
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a>lat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(psu_info<span class="sc">$</span>latitude)</span>
-<span id="cb4-2"><a href=""></a>lon <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(psu_info<span class="sc">$</span>longitude)</span>
-<span id="cb4-3"><a href=""></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb4-4"><a href=""></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb4-5"><a href=""></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span>  <span class="co"># Adds the default OpenStreetMap map background</span></span>
-<span id="cb4-6"><a href=""></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> lon, <span class="at">lat =</span> lat, <span class="at">popup =</span> <span class="st">"We are..."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>lat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(psu_info<span class="sc">$</span>latitude)</span>
+<span id="cb5-2"><a href=""></a>lon <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(psu_info<span class="sc">$</span>longitude)</span>
+<span id="cb5-3"><a href=""></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb5-4"><a href=""></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href=""></a>  <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span>  <span class="co"># Adds the default OpenStreetMap map background</span></span>
+<span id="cb5-6"><a href=""></a>  <span class="fu">addMarkers</span>(<span class="at">lng =</span> lon, <span class="at">lat =</span> lat, <span class="at">popup =</span> <span class="st">"We are..."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="fig-map-lat-lon" class="cell-output-display quarto-float quarto-figure quarto-figure-center">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-map-lat-lon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-4c7802db4365292f2378" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-4c7802db4365292f2378">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[40.798213,-77.859908,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"We are...",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[40.798213,40.798213],"lng":[-77.859908,-77.859908]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-18d43d79009ae8937af3" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-18d43d79009ae8937af3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[40.798213,-77.859908,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"We are...",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[40.798213,40.798213],"lng":[-77.859908,-77.859908]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-map-lat-lon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: A map generated via lat/lon data provided via the Databrary API.
+Figure&nbsp;17: A map generated via lat/lon data provided via the Databrary API.
 </figcaption>
 </figure>
 </div>
 </div>
 </div></div>
 </section>
-<section id="penn-state-1" class="slide level2 scrollable">
-<h2>@ Penn State</h2>
+<section id="researchers-penn-state" class="slide level2 scrollable">
+<h2>Researchers @ Penn State</h2>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>psu_ais <span class="ot">&lt;-</span> <span class="fu">list_institution_affiliates</span>(<span class="at">institution_id =</span> <span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a>psu_ais <span class="ot">&lt;-</span> <span class="fu">list_institution_affiliates</span>(<span class="at">institution_id =</span> <span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
@@ -501,24 +1417,213 @@ Figure&nbsp;2: A map generated via lat/lon data provided via the Databrary API.
 </div>
 </div>
 </section>
-<section id="some-illustrative-datasets" class="slide level2">
-<h2>Some illustrative datasets</h2>
+<section id="data-penn-state" class="slide level2">
+<h2>Data @ Penn State</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">source</span>(<span class="st">"R/get_institution_user_stats.R"</span>)</span>
+<span id="cb7-2"><a href=""></a>psu_stats <span class="ot">&lt;-</span> <span class="fu">get_institution_statistics</span>(<span class="dv">12</span>)</span>
+<span id="cb7-3"><a href=""></a>psu_user_stats <span class="ot">&lt;-</span> <span class="fu">get_institution_user_stats</span>(<span class="dv">12</span>)</span>
+<span id="cb7-4"><a href=""></a>user_uploaded_data_footprint <span class="ot">&lt;-</span> <span class="fu">sum</span>(psu_user_stats<span class="sc">$</span>uploaded_data_footprint)</span>
+<span id="cb7-5"><a href=""></a>user_uploaded_n_files <span class="ot">&lt;-</span> <span class="fu">sum</span>(psu_user_stats<span class="sc">$</span>files_number)</span>
+<span id="cb7-6"><a href=""></a>user_volumes_number <span class="ot">&lt;-</span> <span class="fu">sum</span>(psu_user_stats<span class="sc">$</span>volumes_number)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ul>
+<li>Researcher “owned”<a href="#/footnotes" class="footnote-ref" id="fnref2" role="doc-noteref" data-footnote-href="#/fn2" onclick=""><sup>2</sup></a>
+<ul>
+<li>6,682 GB of data, <em>n</em>=31,031 files in <em>n</em>=73 volumes/datasets</li>
+</ul></li>
+<li>Institutionally “owned”<a href="#/footnotes" class="footnote-ref" id="fnref3" role="doc-noteref" data-footnote-href="#/fn3" onclick=""><sup>3</sup></a>
+<ul>
+<li>16.37 GB, <em>n</em>=94 files in <em>n</em>=1 volume/dataset</li>
+</ul></li>
+</ul>
+<aside></aside></section>
+<section id="examples-2" class="slide level2">
+<h2>Examples</h2>
 </section>
 <section id="new-features" class="slide level2">
 <h2>New features</h2>
 <ul>
-<li>Secure API for scriptable interactions (up/download)
+<li>Secure API for scriptable interactions (up/download)<a href="#/footnotes" class="footnote-ref" id="fnref4" role="doc-noteref" data-footnote-href="#/fn4" onclick=""><sup>4</sup></a>
 <ul>
 <li><em>databraryr</em> (R)</li>
 <li><em>databrarypy</em> (Python)</li>
 </ul></li>
-<li>Custom Collections
+<li>Custom collections
 <ul>
-<li>Curate your own set of clips, datasets</li>
+<li>Curate your own set of clips, datasets<a href="#/footnotes" class="footnote-ref" id="fnref5" role="doc-noteref" data-footnote-href="#/fn5" onclick=""><sup>5</sup></a></li>
+</ul></li>
+<li>External integrations
+<ul>
+<li>Add geographically-informed data from U.S. Census<a href="#/footnotes" class="footnote-ref" id="fnref6" role="doc-noteref" data-footnote-href="#/fn6" onclick=""><sup>6</sup></a></li>
 </ul></li>
 </ul>
+<aside></aside></section></section>
+<section>
+<section id="play-learning-across-a-year-play" class="title-slide slide level1 center">
+<h1>Play &amp; Learning Across a Year (PLAY)</h1>
 
+</section>
+<section id="play-overview" class="slide level2">
+<h2>PLAY Overview</h2>
 </section></section>
+<section id="what-to-share" class="title-slide slide level1 center">
+<h1>What to share</h1>
+
+</section>
+
+<section id="why-share" class="title-slide slide level1 center">
+<h1>Why share</h1>
+
+</section>
+
+<section>
+<section id="the-future-of-open-psychological-science" class="title-slide slide level1 center">
+<h1>The future of open psychological science</h1>
+
+</section>
+<section id="imagine" class="slide level2">
+<h2>Imagine…</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>There’s no paywalls</li>
+<li>No “data on request” statements</li>
+<li>Openly shared protocols</li>
+<li>Data documented, too…</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div id="fig-john-lennon-wikipedia" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-john-lennon-wikipedia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg/1280px-John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" class="lightbox" data-gallery="quarto-lightbox-gallery-36" title="Figure&nbsp;18: Wikipedia"><img data-src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg/1280px-John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=imageinfo&amp;utm_content=thumbnail" style="width:75.0%"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-john-lennon-wikipedia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;18: Wikipedia<a href="#/footnotes" class="footnote-ref" id="fnref7" role="doc-noteref" data-footnote-href="#/fn7" onclick=""><sup>7</sup></a>
+</figcaption>
+</figure>
+</div>
+</div></div>
+<aside></aside></section>
+<section id="imagine-1" class="slide level2">
+<h2>Imagine…</h2>
+<ul>
+<li>Every paper comes with openly shared data
+<ul>
+<li>Data papers<a href="#/footnotes" class="footnote-ref" id="fnref8" role="doc-noteref" data-footnote-href="#/fn8" onclick=""><sup>8</sup></a> &amp; preregistrationstandard</li>
+</ul></li>
+<li>Linked to protocols &amp; code<a href="#/footnotes" class="footnote-ref" id="fnref9" role="doc-noteref" data-footnote-href="#/fn9" onclick=""><sup>9</sup></a> that can reproduce all statistical analyses and figures</li>
+<li>Openly shared videos of experiments, displays<a href="#/footnotes" class="footnote-ref" id="fnref10" role="doc-noteref" data-footnote-href="#/fn10" onclick=""><sup>10</sup></a></li>
+<li>Aggregation of datasets for meta/mega/multiverse analyses made <em>much</em> easier</li>
+</ul>
+<aside></aside></section>
+<section id="imagine-2" class="slide level2">
+<h2>Imagine…</h2>
+<ul>
+<li>Embedding <em>reproducibility</em> &amp; <em>replication</em> into (undergrad &amp; grad) curriculum <span class="citation" data-cites="Frank2012-fc">(<a href="#/references" role="doc-biblioref" onclick="">Frank &amp; Saxe, 2012</a>)</span>
+<ul>
+<li>Make data visualization &amp; <a href="https://penn-state-open-science.github.io/posts/2025-11-17-sleic-workshop.html">management best practices</a> prominent</li>
+<li>1st semester projects <em>reproduce</em> a prior analysis</li>
+<li>1-2 year/master’s project conducts an exact<a href="#/footnotes" class="footnote-ref" id="fnref11" role="doc-noteref" data-footnote-href="#/fn11" onclick=""><sup>11</sup></a> <em>replication</em><a href="#/footnotes" class="footnote-ref" id="fnref12" role="doc-noteref" data-footnote-href="#/fn12" onclick=""><sup>12</sup></a></li>
+</ul></li>
+</ul>
+<aside></aside></section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap-up</h1>
+
+</section>
+<section id="main-points" class="slide level2">
+<h2>Main points</h2>
+<ul>
+<li>Openly sharing data, protocols, code is an investment in the future of discovery</li>
+<li>Open sharing strengthens your research</li>
+<li>Restricted access sharing protects participants and their privacy</li>
+<li>Databrary enables open sharing of research data</li>
+</ul>
+</section></section>
+<section>
+<section id="resources" class="title-slide slide level1 center">
+<h1>Resources</h1>
+
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Brakewood2013-wj" class="csl-entry" role="listitem">
+Brakewood, B., &amp; Poldrack, R. A. (2013). The ethics of secondary data analysis: Considering the application of belmont principles to the sharing of neuroimaging data. <em>NeuroImage</em>, <em>82</em>, 671–676. <a href="https://doi.org/10.1016/j.neuroimage.2013.02.040">https://doi.org/10.1016/j.neuroimage.2013.02.040</a>
+</div>
+<div id="ref-Carroll2020-mo" class="csl-entry" role="listitem">
+Carroll, S. R., Garba, I., Figueroa-Rodríguez, O. L., Holbrook, J., Lovett, R., Materechera, S., … Hudson, M. (2020). The <span>CARE</span> principles for indigenous data governance. <em>Data Science Journal</em>, <em>19</em>. <a href="https://doi.org/10.5334/dsj-2020-043">https://doi.org/10.5334/dsj-2020-043</a>
+</div>
+<div id="ref-UnknownUnknown-zt" class="csl-entry" role="listitem">
+Data management &amp; sharing policy overview. (n.d.). Retrieved November 12, 2025, from <a href="https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/dms/policy-overview">https://grants.nih.gov/policy-and-compliance/policy-topics/sharing-policies/dms/policy-overview</a>
+</div>
+<div id="ref-UnknownUnknown-vx" class="csl-entry" role="listitem">
+Databrary: Obtaining sharing release. (n.d.). Retrieved November 12, 2025, from <a href="https://nyu.databrary.org/support/irb/examples">https://nyu.databrary.org/support/irb/examples</a>
+</div>
+<div id="ref-Frank2012-fc" class="csl-entry" role="listitem">
+Frank, M. C., &amp; Saxe, R. (2012). Teaching replication. <em>Perspectives on Psychological Science: A Journal of the Association for Psychological Science</em>, <em>7</em>, 600–604. <a href="https://doi.org/10.1177/1745691612460686">https://doi.org/10.1177/1745691612460686</a>
+</div>
+<div id="ref-Gilmore2017-wd" class="csl-entry" role="listitem">
+Gilmore, R. O., &amp; Adolph, K. E. (2017). Video can make behavioural science more reproducible. <em>Nature Human Behaviour</em>, <em>1</em>, 0128. <a href="https://doi.org/10.1038/s41562-017-0128">https://doi.org/10.1038/s41562-017-0128</a>
+</div>
+<div id="ref-Gilmore2015-oj" class="csl-entry" role="listitem">
+Gilmore, R. O., Raudies, F., &amp; Jayaraman, S. (2015). What accounts for developmental shifts in optic flow sensitivity? In <em>2015 <span>J</span>oint <span>IEEE</span> <span>I</span>nternational <span>C</span>onference on <span>D</span>evelopment and <span>L</span>earning and <span>E</span>pigenetic <span>R</span>obotics <span>(ICDL-EpiRob)</span></em> (pp. 19–25). Providence, RI, USA: IEEE. <a href="https://doi.org/10.1109/devlrn.2015.7345450">https://doi.org/10.1109/devlrn.2015.7345450</a>
+</div>
+<div id="ref-Houtkoop2018-tl" class="csl-entry" role="listitem">
+Houtkoop, B. L., Chambers, C., Macleod, M., Bishop, D. V. M., Nichols, T. E., &amp; Wagenmakers, E.-J. (2018). Data sharing in psychology: A survey on barriers and preconditions. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>, 70–85. <a href="https://doi.org/10.1177/2515245917751886">https://doi.org/10.1177/2515245917751886</a>
+</div>
+<div id="ref-National-Institutes-of-HealthUnknown-ys" class="csl-entry" role="listitem">
+National Institutes of Health. (n.d.). <span>NOT</span>-<span>OD</span>-21-013: Final <span>NIH</span> policy for data management and sharing. Retrieved October 24, 2021, from <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html">https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html</a>
+</div>
+<div id="ref-NYU_Health_Sciences_Library2013-gp" class="csl-entry" role="listitem">
+NYU Health Sciences Library. (2013). <em>Data sharing and management snafu in 3 short acts (higher quality)</em>. Youtube. Retrieved from <a href="https://www.youtube.com/watch?v=66oNv_DJuPc">https://www.youtube.com/watch?v=66oNv_DJuPc</a>
+</div>
+<div id="ref-PathfindersPerform2013-cy" class="csl-entry" role="listitem">
+PathfindersPerform. (2013). <em>Pay me now or pay me later; pay me you will!</em> Youtube. Retrieved from <a href="https://www.youtube.com/watch?v=Ij1yDpfZI8Q">https://www.youtube.com/watch?v=Ij1yDpfZI8Q</a>
+</div>
+<div id="ref-UnknownUnknown-ik" class="csl-entry" role="listitem">
+PLAY project: Collection overview. (n.d.). Retrieved November 12, 2025, from <a href="https://play-project.org/collection.html">https://play-project.org/collection.html</a>
+</div>
+<div id="ref-UnknownUnknown-da" class="csl-entry" role="listitem">
+Preparing your data management and sharing plan. (n.d.). Retrieved November 12, 2025, from <a href="https://www.nsf.gov/funding/data-management-plan">https://www.nsf.gov/funding/data-management-plan</a>
+</div>
+<div id="ref-UnknownUnknown-hn" class="csl-entry" role="listitem">
+Research data management. (n.d.). Retrieved November 12, 2025, from <a href="https://policy.psu.edu/policies/rp15">https://policy.psu.edu/policies/rp15</a>
+</div>
+<div id="ref-Soska2021-mh" class="csl-entry" role="listitem">
+Soska, K. C., Xu, M., Gonzalez, S. L., Herzberg, O., Tamis-LeMonda, C. S., Gilmore, R. O., &amp; Adolph, K. E. (2021). (Hyper)active data curation: A video case study from behavioral science. <em>Journal of Escience Librarianship</em>, <em>10</em>. <a href="https://doi.org/10.7191/jeslib.2021.1208">https://doi.org/10.7191/jeslib.2021.1208</a>
+</div>
+<div id="ref-Tenopir2020-mq" class="csl-entry" role="listitem">
+Tenopir, C., Rice, N. M., Allard, S., Baird, L., Borycz, J., Christian, L., … Sandusky, R. J. (2020). Data sharing, management, use, and reuse: Practices and perceptions of scientists worldwide. <em>PloS One</em>, <em>15</em>, e0229003. <a href="https://doi.org/10.1371/journal.pone.0229003">https://doi.org/10.1371/journal.pone.0229003</a>
+</div>
+<div id="ref-Wilkinson2016-qr" class="csl-entry" role="listitem">
+Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J. J., Appleton, G., Axton, M., Baak, A., … Mons, B. (2016). The <span>FAIR</span> guiding principles for scientific data management and stewardship. <em>Scientific Data</em>, <em>3</em>, 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>
+</div>
+</div>
+</section></section>
+<section id="footnotes" class="footnotes footnotes-end-of-document smaller scrollable" role="doc-endnotes"><h2>Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Plus birth dates, test dates, address/geo information.</p></li>
+<li id="fn2"><p>Under PSU policy, researchers do not own their data. See <a href="https://policy.psu.edu/policies/rp15">RP15</a>.</p></li>
+<li id="fn3"><p>Investigator(s) no longer affiliated with Penn State.</p></li>
+<li id="fn4"><p>NSF 244730</p></li>
+<li id="fn5"><p>NSF 244730</p></li>
+<li id="fn6"><p>In collaboration with <a href="https://thearda.org">The ARDA</a>; financial support from the John S. Templeton Foundation.</p></li>
+<li id="fn7"><p>By Bob Gruen; Distributed by Capitol Records - Listen to This Press Kit (1974)Immediate (iHeart), Public Domain, https://commons.wikimedia.org/w/index.php?curid=175003052</p></li>
+<li id="fn8"><p>e.g., <em>Scientific Data</em></p></li>
+<li id="fn9"><p>I favor <a href="https://quarto.org">Quarto</a></p></li>
+<li id="fn10"><p>Remember <a href="https://en.wikipedia.org/wiki/Clever_Hans">Clever Hans</a>?</p></li>
+<li id="fn11"><p>As possible.</p></li>
+<li id="fn12"><p>At least for the first study of a multi-study project</p></li>
+</ol>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="https://brand.psu.edu/images/backgrounds/penn-state-shield.jpg" class="slide-logo"></p>
@@ -946,6 +2051,12 @@ Figure&nbsp;2: A map generated via lat/lon data provided via the Databrary API.
       });
       </script>
     <script>videojs(video_shortcode_videojs_video1);</script>
+    <script>videojs(video_shortcode_videojs_video2);</script>
+    <script>videojs(video_shortcode_videojs_video3);</script>
+    <script>videojs(video_shortcode_videojs_video4);</script>
+    <script>videojs(video_shortcode_videojs_video5);</script>
+    <script>videojs(video_shortcode_videojs_video6);</script>
+    <script>videojs(video_shortcode_videojs_video7);</script>
     <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
     (function() {
       let previousOnload = window.onload;
