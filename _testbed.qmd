@@ -1,0 +1,28 @@
+---
+title: "_testbed"
+format: revealjs
+---
+
+## {auto-animate=true}
+
+![@Tenopir2020-mq Fig 8](include/img/tenopir-2000-fig-xx.png){width="150%"}
+
+## {auto-animate=true}
+
+:::: {.columns}
+::: {.column width=60%}
+![@Tenopir2020-mq](include/img/tenopir-2000-fig-xx.png)
+:::
+::: {.column width=40%}
+::: {.fragment}
+- Must publish first
+- No time, funding
+- No permission
+- Not required
+- No place to put
+- Insufficient skills
+:::
+:::
+::::
+
+## References

@@ -1,6 +1,6 @@
 ---
 title: "Sharing is caring"
-subtitle: "Insights from the front lines of the open science revolution"
+subtitle: "Seeding the future of discovery in psychological science"
 format: revealjs
 ---
 
@@ -32,24 +32,22 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ## 
 
-![<https://penn-state-open-science.github.io>](include/img/osi-home.png)
+![<https://penn-state-open-science.github.io>](include/img/osi-home.png){#fig-osi-page width="85%"}
 
-## Best practices in
+## Data sharing requires
 
 ::: {.incremental}
-- Project management
+- Best practices in project management
 - $+$ Data management 
 - $\rightarrow$ Sharing
 :::
 
 ## Sharing...
 
-::: {.incremental}
 - Accelerates discovery
 - Bolsters credibility
-:::
 
-## An ethical thing to do
+## ...is an ethical thing to do
 
 >Whereas regulators of human subjects research often view data sharing solely in terms of potential risks to subjects, we argue that the **principles of human subject research require an analysis of both risks and benefits**...
 
@@ -109,7 +107,7 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ---
 
-![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl3aDlrZWZ2Nm9tcXh1czhvYjk4bjJlc2M3emR5dG96NnpldWx0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif){fig-align="center"}
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl3aDlrZWZ2Nm9tcXh1czhvYjk4bjJlc2M3emR5dG96NnpldWx0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif){fig-align="center" #fig-yoda-fear-in-you width="75%"}
 
 ## {auto-animate=true}
 
@@ -125,9 +123,9 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 ::: {.fragment}
 - Misinterpretations of the data
 - Scooped
-- Control over IP
+- Control over intellectual property
 - Unintended secondary use
-- Invalid conclusions, errors
+- Expose invalid conclusions, errors
 :::
 :::
 ::::
@@ -144,17 +142,33 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 :::
 ::: {.column width=40%}
 ::: {.fragment}
-- Invalid conclusions
-- Control over IP
-- Errors
+- Expose invalid conclusions
+- Control over intellectual property
+- Discover errors
 - Misinterpretation
 :::
 :::
 ::::
 
-## Moving the needle {auto-animate=true auto-animate-easing="ease-in-out"}
+## Mitigating
 
-![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png)
+:::: {.columns}
+::: {.column width=50%}
+- Errors
+  - Quality assurance testing and validation
+  - Automated data cleaning, visualization, analysis
+- Control over IP^[You don't own your data, anyway.], fear of being scooped
+  - Publish your data
+  
+:::
+::: {.column width=50%}
+![](https://www.azquotes.com/picture-quotes/quote-the-only-thing-we-have-to-fear-is-fear-itself-franklin-d-roosevelt-25-8-0879.jpg)
+:::
+::::
+
+## "How likely are you to share your research data..." {auto-animate=true auto-animate-easing="ease-in-out"}
+
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png){#fig-houtkoop-2018-04}
 
 ## {auto-animate=true auto-animate-easing="ease-in-out"}
 
@@ -216,8 +230,6 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 :::
 :::
 ::::
-
-
 
 # How
 
@@ -374,39 +386,28 @@ Version your protocol.
 
 *Manual is fine*: e.g, `nsf-2412345-protocol-2025-12-02v01.docx`.
 
-*Automated is better*: 
+*Automated is better*: Google Docs keeps version histories. 
+:::
 
-Google Docs keeps version histories. 
+::: {.fragment}
 
-[Quarto](https://quarto.org) enables git-versioned web sites as protocols.
+::: {.callout-important}
+## Quarto rocks!
+
+[![](https://quarto.org/quarto.png)](https://quarto.org)
+
+enables the creation of git-versioned web sites as protocols, among other types of scholarly documents.
+
+:::
+
 :::
 
 ## Examples
 
-::: {.incremental}
 - Open Scholarship Survey (2022-23)
   - [IRB protocol](https://penn-state-open-science.github.io/survey-fall-2022/hrp-591.html) + [data processing](https://penn-state-open-science.github.io/survey-fall-2022/data-gathering-and-cleaning.html) and [visualization pipeline](https://penn-state-open-science.github.io/survey-fall-2022/data-visualization.html)
 - Play & Learning Across a Year (PLAY Project)
   - Project [site](https://play-project.org) and [protocol](https://play-project.org/collection.html)
-  - Survey [data cleaning and visualization](https://play-project.org/KoBoToolbox)
-
-:::
-
-
----
-
-{{< video https://www.anhourinthelife.org/img/PLAY-parents-noaudio.mp4 >}}
-  
----
-
-:::: {.columns}
-::: {.column width=50%}
-![@Soska2021-mh Figure 1](include/img/soska-etal-fig-01.png)
-:::
-::: {.column width=50%}
-![@Soska2021-mh Figure 3](include/img/soska-etal-fig-03.png)
-:::
-::::
 
 ---
 
@@ -481,7 +482,7 @@ mkdir -p project/data/sub-control01/{anat,func,dwi,fmap}
 ## Examples
 
 - Project-specific R packages (A. Pearce)
-- Use [REDcap](https://project-redcap.org) to capture project metadata
+- [REDcap](https://project-redcap.org) to capture project metadata
 - Executable [Quarto](https://quarto.org) documents
   - Bootcamp 2026 [site](https://penn-state-open-science.github.io/bootcamp-2026/)
   - Bootcamp 2026 Workshops [I](https://penn-state-open-science.github.io/bootcamp-2026-quarto-I/) and [II](https://penn-state-open-science.github.io/bootcamp-2025-quarto-II/)
@@ -506,9 +507,10 @@ APIs can change, so be prepared to update your procedures & code.
 ## Big picture
 
 - Privacy & permission
+- AI and IP
 - Type(s) of data
 - Repositories
-- Data papers
+- *Data papers*
 
 ## Privacy & permission
 
@@ -517,6 +519,13 @@ APIs can change, so be prepared to update your procedures & code.
 - Store sharing permission & consider sharing it
 - Pseudo-anonymizing
   - May or may not be required
+  
+## AI and IP
+
+- Sharing data, protocols, metadata, code publicly means
+- Anyone can mine & use, including AI agents
+  - Will you get credited/cited properly?
+- Alternative: Restricted access sharing
 
 ## Type(s) of data
 
@@ -570,7 +579,7 @@ APIs can change, so be prepared to update your procedures & code.
 :::
 ::::
 
-## Sharing identifiable data
+## Identifiable data
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -603,10 +612,11 @@ APIs can change, so be prepared to update your procedures & code.
 - Housed at NYU
 - Specialized for storing, sharing *identifiable data*
 
+
 ## How!?
 
 - Restricted access
-- Explicit sharing release
+- Explicit sharing release from participants/parents/staff
 - Institutional agreements
 
 ## Restricted access
@@ -716,7 +726,7 @@ leaflet() %>%
 psu_ais <- list_institution_affiliates(institution_id = 12)
 ```
 
-- There are *n*=`{r} dim(psu_ais)[1]` Authorized Investigators
+- There are *n*=`{r} dim(psu_ais)[1]` *Authorized Investigators*
 
 ---
 
@@ -761,11 +771,54 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
   
 # Play & Learning Across a Year (PLAY)
 
-## PLAY Overview
+---
+
+{{< video include/vid/PLAY-parents-noaudio.mp4 >}}
+
+---
+
+:::: {.columns}
+::: {.column width=50%}
+![@Soska2021-mh Figure 1](include/img/soska-etal-fig-01.png)
+:::
+::: {.column width=50%}
+![@Soska2021-mh Figure 3](include/img/soska-etal-fig-03.png)
+:::
+::::
 
 # What to share
 
-# Why share
+## Low hanging fruit
+
+:::: {.columns}
+::: {.column width=50%}
+- Protocols
+  - Text + images
+  - Video
+- Displays
+  - Code
+  - Video
+  
+:::
+::: {.column width=50%}
+- Code
+  - Data cleaning
+  - Visualization
+  - Analysis
+- Data
+  - Non-identifiable
+- Pubs
+  - Preliminary reports
+  - Posters, preprints
+:::
+::::
+
+## A (slightly bigger) lift
+
+- Identifiable data
+  - Video or audio recordings of individual sessions
+  - Exact birth or test dates
+  - Geographic information (e.g., address-related)
 
 # The future of open psychological science
 
@@ -774,7 +827,7 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
 :::: {.columns}
 ::: {.column width=50%}
 - There's no paywalls
-- No "data on request" statements
+- No "data on request" promises
 - Openly shared protocols
 - Data documented, too...
 :::
@@ -798,11 +851,32 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
   - 1st semester projects *reproduce* a prior analysis
   - 1-2 year/master's project conducts an exact^[As possible.] *replication*^[At least for the first study of a multi-study project]
 
+## Opportunities
+
+- Bring open practices into your lab group
+  - Reproduce prior analyses, visualizations
+  - Replicate prior findings first
+  - Create open, versioned protocols
+- Participate in Open Scholarship Initiative
+  - Workshops
+  - Bootcamp
+  - Talks
+
+## Opportunities
+
+- Help Gilmore with open science projects
+  - PLAY
+      - Shiny app
+      - New analysis of video data
+      - Augment with geographically informed contextual data
+  - How-to papers about *databraryr* or *databrarypy*
+  - Mega-analysis of child visual acuity data
+
 # Wrap-up
 
 ## Main points
 
-- Openly sharing data, protocols, code is an investment in the future of discovery
+- Openly sharing data, protocols, code is an investment in the future of discovery in psychological science
 - Open sharing strengthens your research
 - Restricted access sharing protects participants and their privacy
 - Databrary enables open sharing of research data
@@ -810,4 +884,3 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
 # Resources
 
 ## References
-

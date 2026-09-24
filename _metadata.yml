@@ -17,4 +17,4 @@ format:
     citations-hover: true
 knitr:
   opts_chunk:
-    fig.path: include/fig
+    fig.path: include/fig/
