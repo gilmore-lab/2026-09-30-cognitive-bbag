@@ -869,16 +869,17 @@ play_summ_demog_df <- play_df |>
   - Spanish: `{r} sum(play_summ_demog_df$spanish == TRUE, na.rm = TRUE)`
   - Both English & Spanish: `{r} sum(play_summ_demog_df$both == TRUE, na.rm = TRUE)`
   
-## PLAY demographics
+## PLAY demographics {.scrollable}
   
 ```{r}
 #| label: fig-play-demog-race
-#| fig-cap: "Reported race for children in PLAY sample."
+#| fig-cap: "Reported race using OMB categories for children in PLAY sample."
+#| echo: true
 play_summ_demog_df |>
   filter(!is.na(race)) |>
   mutate(n_race = fct_rev(fct_infreq(race))) |>
   ggplot() +
-  geom_col(aes(x = race, fill = race), stat = "count") +
+  geom_col(aes(x = n_race, fill = n_race), stat = "count") +
   coord_flip() +
   theme_classic() +
   theme(legend.position = "none") +
@@ -907,7 +908,7 @@ play_summ_demog_df |>
   - Visualization
   - Analysis
 - Data
-  - Non-identifiable
+  - Non-identifiable^[But consider AI, non-expected uses.]
   
 :::
 ::::
@@ -923,7 +924,8 @@ play_summ_demog_df |>
 - Identifiable data
   - Video or audio recordings of individual sessions
   - Exact birth or test dates
-  - Geographic information (e.g., address-related)
+  - Geographic information (e.g., address-related) for contextual info
+    - Median income, health, education, environmental quality, climate, etc.^[e.g., Was your sample collected in an area with high COVID rates?]
 
 # The future of open psychological science
 
@@ -935,6 +937,11 @@ play_summ_demog_df |>
 - No "data on request" promises
 - Openly shared protocols
 - Data documented, too...
+
+::: {.fragment}
+>You may say I'm a dreamer, but I'm not the only one.
+:::
+
 :::
 ::: {.column width=50%}
 ![John Lennon; Wikipedia^[By Bob Gruen; Distributed by Capitol Records - Listen to This Press Kit (1974)Immediate (iHeart), Public Domain, https://commons.wikimedia.org/w/index.php?curid=175003052]](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg/1280px-John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail){#fig-john-lennon-wikipedia width="75%"}
@@ -958,7 +965,7 @@ play_summ_demog_df |>
 
 ## Opportunities
 
-- Bring open practices into your lab group
+- Strengthen open practices into your lab group
   - Reproduce prior analyses, visualizations
   - Replicate prior findings first
   - Create open, versioned protocols
