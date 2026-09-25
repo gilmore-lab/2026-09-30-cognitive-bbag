@@ -25,4 +25,23 @@ format: revealjs
 :::
 ::::
 
+## PLAY cleaning code
+
+```{r}
+library(dplyr)
+play_df <- readr::read_csv("private/csv/Play_&_Learning_Across_a_Year_(PLAY)_project_-_data_release.csv")
+
+play_df <- play_df |>
+  mutate(file_ext = stringr::str_extract(file_name, "\\.[a-zA-Z0-9]+$")) |>
+  mutate(particip_id = stringr::str_extract(file_name, "[A-Z]{5}_[0-9]{3}"))
+
+play_summ_n_files_df <- play_df |>
+  group_by(particip_id) |>
+  summarise(n_files = n())
+
+play_summ_release_df <- play_df |>
+  select(particip_id, release_level)
+```
+
+
 ## References

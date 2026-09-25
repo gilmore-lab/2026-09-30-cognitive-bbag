@@ -786,6 +786,107 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
 :::
 ::::
 
+## Dataset
+
+![https://databrary.org/volume/1280](include/img/databrary-1280-play.png){#fig-embargoed-data-release}
+
+## PLAY Summary
+
+```{r}
+#| label: play-csv-data
+library(ggplot2)
+library(dplyr)
+library(forcats)
+library(readr)
+library(stringr)
+
+play_df <- readr::read_csv("private/csv/Play_&_Learning_Across_a_Year_(PLAY)_project_-_data_release.csv")
+
+play_df <- play_df |>
+  mutate(particip_id = stringr::str_extract(file_name, "[A-Z]{5}_[0-9]{3}"))
+```
+
+```{r}
+#| label: play-data-n-files
+play_summ_n_files_df <- play_df |>
+  group_by(particip_id) |>
+  summarise(n_files = n())
+```
+
+- *N*=`{r} dim(play_summ_n_files_df)[1]` participant dyads
+- *N*=`{r} format(sum(play_summ_n_files_df$n_files), big.mark = ",", digits = 4)` shared files
+
+## PLAY sharing permission
+
+```{r}
+#| label: fig-play-data-release
+#| fig-cap: "Sharing permissions granted for PLAY corpus."
+play_summ_release_df <- play_df |>
+  select(particip_id, container_release_level) |>
+  rename(sharing = container_release_level) |>
+  distinct()
+
+play_summ_release_df |>
+  mutate(sharing = fct_rev(fct_inorder(sharing))) |>
+  ggplot() +
+  geom_bar(aes(x = sharing, fill = sharing), stat = "count") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "n") +
+  ylab("dyads") +
+  xlab("")
+```
+
+## PLAY demographics
+
+```{r}
+#| label: play-data-demog
+#| echo: true
+play_summ_demog_df <- play_df |>
+  select(
+    particip_id,
+    `participant-1-gender`,
+    `participant-1-race`,
+    `participant-1-ethnicity`,
+    `participant-1-language`
+  ) |>
+  distinct() |>
+  rename(
+    ethnicity = `participant-1-ethnicity`,
+    language = `participant-1-language`,
+    gender = `participant-1-gender`,
+    race = `participant-1-race`
+  ) |>
+  mutate(english = str_detect(language, "English"),
+         spanish = str_detect(language, "Spanish"),
+         both = str_detect(language, "English, Spanish"))
+```
+
+- Sex reported at birth:
+  - `{r} sum(play_summ_demog_df$gender == "Female", na.rm = TRUE)` girls; `{r} sum(play_summ_demog_df$gender == "Male", na.rm = TRUE)` boys
+- Languages spoken at home:
+  - English: `{r} sum(play_summ_demog_df$english == TRUE, na.rm = TRUE)`
+  - Spanish: `{r} sum(play_summ_demog_df$spanish == TRUE, na.rm = TRUE)`
+  - Both English & Spanish: `{r} sum(play_summ_demog_df$both == TRUE, na.rm = TRUE)`
+  
+## PLAY demographics
+  
+```{r}
+#| label: fig-play-demog-race
+#| fig-cap: "Reported race for children in PLAY sample."
+play_summ_demog_df |>
+  filter(!is.na(race)) |>
+  mutate(n_race = fct_rev(fct_infreq(race))) |>
+  ggplot() +
+  geom_col(aes(x = race, fill = race), stat = "count") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "none") +
+  xlab("") +
+  ylab("dyads")
+```
+
+
 # What to share
 
 ## Low hanging fruit
@@ -796,7 +897,7 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
   - Text + images
   - Video
 - Displays
-  - Code
+  - Code^[On Github, Gitlab or other.]
   - Video
   
 :::
@@ -807,11 +908,15 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
   - Analysis
 - Data
   - Non-identifiable
+  
+:::
+::::
+
+## Low hanging fruit
+
 - Pubs
   - Preliminary reports
   - Posters, preprints
-:::
-::::
 
 ## A (slightly bigger) lift
 
@@ -832,14 +937,14 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
 - Data documented, too...
 :::
 ::: {.column width=50%}
-![Wikipedia^[By Bob Gruen; Distributed by Capitol Records - Listen to This Press Kit (1974)Immediate (iHeart), Public Domain, https://commons.wikimedia.org/w/index.php?curid=175003052]](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg/1280px-John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail){#fig-john-lennon-wikipedia width="75%"}
+![John Lennon; Wikipedia^[By Bob Gruen; Distributed by Capitol Records - Listen to This Press Kit (1974)Immediate (iHeart), Public Domain, https://commons.wikimedia.org/w/index.php?curid=175003052]](https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg/1280px-John_Lennon_%22Walls_and_Bridges%22_1974_press_photo_2_%28color%29_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail){#fig-john-lennon-wikipedia width="75%"}
 :::
 ::::
 
 ## Imagine...
 
 - Every paper comes with openly shared data
-  - Data papers^[e.g., *Scientific Data*] & preregistrationstandard
+  - Data papers^[e.g., *Scientific Data*] & preregistration standard
 - Linked to protocols & code^[I favor [Quarto](https://quarto.org)] that can reproduce all statistical analyses and figures
 - Openly shared videos of experiments, displays^[Remember [Clever Hans](https://en.wikipedia.org/wiki/Clever_Hans)?]
 - Aggregation of datasets for meta/mega/multiverse analyses made *much* easier
@@ -880,6 +985,7 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
 - Open sharing strengthens your research
 - Restricted access sharing protects participants and their privacy
 - Databrary enables open sharing of research data
+- Join us in building a more open, transparent, robust, and reproducible future
 
 # Resources
 
