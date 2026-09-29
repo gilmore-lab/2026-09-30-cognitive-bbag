@@ -836,14 +836,18 @@ play_summ_demog_df <- play_df |>
     `participant-1-gender`,
     `participant-1-race`,
     `participant-1-ethnicity`,
-    `participant-1-language`
+    `participant-1-language`,
+    `participant-1-age_weeks`,
+    `participant-1-age_months`
   ) |>
   distinct() |>
   rename(
     ethnicity = `participant-1-ethnicity`,
     language = `participant-1-language`,
     gender = `participant-1-gender`,
-    race = `participant-1-race`
+    race = `participant-1-race`,
+    age_wks = `participant-1-age_weeks`,
+    age_mos = `participant-1-age_months`
   ) |>
   mutate(english = str_detect(language, "English"),
          spanish = str_detect(language, "Spanish"),
@@ -857,6 +861,26 @@ play_summ_demog_df <- play_df |>
   - Spanish: `{r} sum(play_summ_demog_df$spanish == TRUE, na.rm = TRUE)`
   - Both English & Spanish: `{r} sum(play_summ_demog_df$both == TRUE, na.rm = TRUE)`
   
+## PLAY demographics {.scrollable}
+
+```{r}
+#| label: fig-play-demog-age
+#| fig-cap: "Reported race^[using 1997 OMB categories] for children in PLAY sample."
+#| echo: true
+#| message: false
+#| warning: false
+play_summ_demog_df |>
+  filter(!is.na(age_wks)) |>
+  mutate(age_wks = as.numeric(age_wks)) |>
+  ggplot() +
+  aes(x = age_wks) +
+  geom_histogram(bins = 18) +
+  theme_classic() +
+  xlab("Age (weeks)") +
+  ylab("Participants") +
+  theme(axis.text = element_text(size = 18))
+```
+
 ## PLAY demographics {.scrollable}
   
 ```{r}
