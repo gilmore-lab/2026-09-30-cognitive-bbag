@@ -861,7 +861,7 @@ play_summ_demog_df <- play_df |>
   
 ```{r}
 #| label: fig-play-demog-race
-#| fig-cap: "Reported race using OMB categories for children in PLAY sample."
+#| fig-cap: "Reported race^[using 1997 OMB categories] for children in PLAY sample."
 #| echo: true
 play_summ_demog_df |>
   filter(!is.na(race)) |>
@@ -880,7 +880,7 @@ play_summ_demog_df |>
 
 ```{r}
 #| label: fig-play-demog-ethnicity
-#| fig-cap: "Reported ethnicity using OMB categories for children in PLAY sample."
+#| fig-cap: "Reported ethnicity ^[using 1997 OMB categories] for children in PLAY sample."
 #| echo: true
 play_summ_demog_df |>
   filter(!is.na(ethnicity)) |>
@@ -952,6 +952,14 @@ logout_db()
   - Geographic information (e.g., address-related) for contextual info
     - Median income, health, education, environmental quality, climate, etc.^[e.g., Was your sample collected in an area with high COVID rates?]
 
+---
+
+### Should all/most data from human participants be shared via restricted access?
+
+---
+
+![](include/img/disclosive-reidentification.png){#fig-disclosive-reidentification}
+
 # The future of open psychological science
 
 ## Imagine...
@@ -1012,7 +1020,7 @@ logout_db()
   - Talks
 :::
 ::: {.column width=50%}
-![2027 Open Scholarship Bootcamp registration.](include/img/bootcamp2027.png)
+![2027 Open Scholarship Bootcamp registration. Scheduled for May 10-11, 2027](include/img/bootcamp2027.png)
 :::
 ::::
 
@@ -1033,7 +1041,7 @@ logout_db()
 - Openly sharing data, protocols, code is an investment in the future of discovery in psychological science
 - Open sharing strengthens your research
 - Restricted access sharing protects participants and their privacy
-- Databrary enables open sharing of research data
+- Databrary enables open sharing of research data with access restrictions
 - Join us in building a more open, transparent, robust, and reproducible future
 
 # Resources
