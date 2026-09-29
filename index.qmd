@@ -79,15 +79,15 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ![@Tenopir2020-mq Fig 7](https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0229003.g007&type=large){#fig-tenopir-2020-fig-7 width="75%"}
 
-## {auto-animate=true}
+##
 
 ![@Tenopir2020-mq Fig 8](include/img/tenopir-2000-fig-xx.png){width="150%"}
 
-## {auto-animate=true}
+## 
 
 :::: {.columns}
 ::: {.column width=60%}
-![@Tenopir2020-mq](include/img/tenopir-2000-fig-xx.png)
+![@Tenopir2020-mq](include/img/tenopir-2000-fig-xx.png){#fig-tenopir-2020-why-not}
 :::
 ::: {.column width=40%}
 ::: {.fragment}
@@ -103,7 +103,7 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ---
 
-![@Houtkoop2018-tl](include/img/houtkoop-2018-title.png)
+![@Houtkoop2018-tl](include/img/houtkoop-2018-title.png){#fig-houtkoop-title}
 
 ---
 
@@ -111,7 +111,7 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ## {auto-animate=true}
 
-![@Houtkoop2018-tl Figure 3a](include/img/houtkoop-2018-fig-03a.png)
+![@Houtkoop2018-tl Figure 3a](include/img/houtkoop-2018-fig-03a.png){#fig-houthoop-fear-yourself}
 
 ## {auto-animate=true}
 
@@ -150,6 +150,10 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 :::
 ::::
 
+---
+
+![](https://www.azquotes.com/picture-quotes/quote-the-only-thing-we-have-to-fear-is-fear-itself-franklin-d-roosevelt-25-8-0879.jpg){fig-align="center"}
+
 ## Mitigating
 
 :::: {.columns}
@@ -166,11 +170,11 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 :::
 ::::
 
-## "How likely are you to share your research data..." {auto-animate=true auto-animate-easing="ease-in-out"}
+## "How likely are you to share your research data..."
 
-![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png){#fig-houtkoop-2018-04}
+![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png){#fig-houtkoop-2018-04 width="65%"}
 
-## {auto-animate=true auto-animate-easing="ease-in-out"}
+## 
 
 :::: {.columns}
 ::: {.column width=60%}
@@ -427,21 +431,6 @@ enables the creation of git-versioned web sites as protocols, among other types 
 
 ---
 
-:::: {.columns}
-::: {.column width=50%}
-{{< video include/vid/Head-camera-with-optic-flow-overlay.mp4 >}}
-:::
-::: {.column width=50%}
-{{< video include/vid/Head-camera-video-with-optic-flow-pattern-estimate.mp4 >}}
-
-{{< video include/vid/Head-camera-video-with-optic-flow-speed-estimate.mp4 >}}
-:::
-::::
-
--- @Gilmore2015-oj
-
----
-
 ::: {.callout-important}
 ## Lesson learned
 
@@ -522,8 +511,9 @@ APIs can change, so be prepared to update your procedures & code.
   
 ## AI and IP
 
-- Sharing data, protocols, metadata, code publicly means
+- Sharing data, protocols, metadata, code publicly means...
 - Anyone can mine & use, including AI agents
+  - Secondary use not governed by ethics board
   - Will you get credited/cited properly?
 - Alternative: Restricted access sharing
 
@@ -611,7 +601,6 @@ APIs can change, so be prepared to update your procedures & code.
 - Data library
 - Housed at NYU
 - Specialized for storing, sharing *identifiable data*
-
 
 ## How!?
 
@@ -757,8 +746,6 @@ user_volumes_number <- sum(psu_user_stats$volumes_number)
 - Institutionally "owned"^[Investigator(s) no longer affiliated with Penn State.]
   - `{r} format(psu_stats$uploaded_data_footprint/1e9, digits = 4, big.mark = ",")` GB, *n*=`{r} format(psu_stats$files_number, digits = 5, big.mark = ",")` files in *n*=`{r} format(psu_stats$volumes_number, digits = 3, big.mark = ",")` volume/dataset
   
-## Examples
-
 ## New features
 
 - Secure API for scriptable interactions (up/download)^[NSF 244730]
@@ -820,7 +807,7 @@ play_summ_n_files_df <- play_df |>
 
 ```{r}
 #| label: fig-play-data-release
-#| fig-cap: "Sharing permissions granted for PLAY corpus."
+#| fig-cap: "Sharing permissions granted for PLAY corpus. Not that most parents gave permission to share data and allow excerpts to be shown."
 play_summ_release_df <- play_df |>
   select(particip_id, container_release_level) |>
   rename(sharing = container_release_level) |>
@@ -834,7 +821,8 @@ play_summ_release_df |>
   theme_classic() +
   theme(legend.position = "n") +
   ylab("dyads") +
-  xlab("")
+  xlab("") +
+  theme(axis.text = element_text(size = 18))
 ```
 
 ## PLAY demographics
@@ -884,9 +872,33 @@ play_summ_demog_df |>
   theme_classic() +
   theme(legend.position = "none") +
   xlab("") +
-  ylab("dyads")
+  ylab("dyads") +
+  theme(axis.text = element_text(size = 18))
 ```
+## PLAY demographics {.scrollable}
 
+```{r}
+#| label: fig-play-demog-ethnicity
+#| fig-cap: "Reported ethnicity using OMB categories for children in PLAY sample."
+#| echo: true
+play_summ_demog_df |>
+  filter(!is.na(ethnicity)) |>
+  mutate(n_ethnicity = fct_rev(fct_infreq(ethnicity))) |>
+  ggplot() +
+  geom_col(aes(x = n_ethnicity, fill = n_ethnicity), stat = "count") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "none") +
+  xlab("") +
+  ylab("dyads") +
+  theme(axis.text = element_text(size = 18))
+``` 
+
+## PLAY status
+
+- Shared with launch group (data collectors, coders, advisers)
+- Shared broadly next summer
+- Opportunities to mine/enhance the data
 
 # What to share
 
@@ -950,18 +962,24 @@ play_summ_demog_df |>
 
 ## Imagine...
 
+::: {.incremental}
 - Every paper comes with openly shared data
   - Data papers^[e.g., *Scientific Data*] & preregistration standard
 - Linked to protocols & code^[I favor [Quarto](https://quarto.org)] that can reproduce all statistical analyses and figures
 - Openly shared videos of experiments, displays^[Remember [Clever Hans](https://en.wikipedia.org/wiki/Clever_Hans)?]
 - Aggregation of datasets for meta/mega/multiverse analyses made *much* easier
 
+:::
+
 ## Imagine...
 
+::: {.incremental}
 - Embedding *reproducibility* & *replication* into (undergrad & grad) curriculum [@Frank2012-fc]
   - Make data visualization & [management best practices](https://penn-state-open-science.github.io/posts/2025-11-17-sleic-workshop.html) prominent
   - 1st semester projects *reproduce* a prior analysis
   - 1-2 year/master's project conducts an exact^[As possible.] *replication*^[At least for the first study of a multi-study project]
+
+:::
 
 ## Opportunities
 
@@ -969,10 +987,21 @@ play_summ_demog_df |>
   - Reproduce prior analyses, visualizations
   - Replicate prior findings first
   - Create open, versioned protocols
+
+
+## Opportunities
+
+:::: {.columns}
+::: {.column width=50%}
 - Participate in Open Scholarship Initiative
   - Workshops
   - Bootcamp
   - Talks
+:::
+::: {.column width=50%}
+![2027 Open Scholarship Bootcamp registration.](include/img/bootcamp2027.png)
+:::
+::::
 
 ## Opportunities
 
