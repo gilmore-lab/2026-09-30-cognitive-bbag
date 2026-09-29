@@ -875,6 +875,7 @@ play_summ_demog_df |>
   ylab("dyads") +
   theme(axis.text = element_text(size = 18))
 ```
+
 ## PLAY demographics {.scrollable}
 
 ```{r}
@@ -900,6 +901,18 @@ play_summ_demog_df |>
 - Shared broadly next summer
 - Opportunities to mine/enhance the data
 
+## Automation in PLAY
+
+- Extensive use of Databrary API
+- Simple demos here
+  - Download to secure encrypted (non-version-controlled) directory
+  - Clean and process data for visualizations, analyses
+  
+```{r}
+#| include: false
+logout_db()
+```
+  
 # What to share
 
 ## Low hanging fruit
