@@ -68,7 +68,7 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 -- @Brakewood2013-wj
 
-## Ethical data sharing
+## Principles of ethical data sharing
 
 :::: {.columns}
 ::: {.column width=50%}
@@ -102,7 +102,7 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 ::: {.fragment}
 - Must publish first
 - No time, funding
-- No permission
+- No rights/permission
 - Not required
 - No place to put
 - Insufficient skills
@@ -529,12 +529,12 @@ APIs can change, so be prepared to update your procedures & code.
 - Broad consent vs. narrow
 - Store sharing permission & consider sharing it
 - Pseudo-anonymizing
-  - May or may not be required
+  - Required?
   
 ## AI and IP
 
 - Sharing data, protocols, metadata, code publicly means...
-- Anyone can mine & use, including AI agents
+- *Anyone/anything* can mine & use
   - Secondary use not governed by ethics board
   - Will you get credited/cited properly?
 - Alternative: Restricted access sharing
@@ -1042,6 +1042,14 @@ logout_db()
 - Linked to protocols & code^[I favor [Quarto](https://quarto.org)] that can reproduce all statistical analyses and figures
 - Openly shared videos of experiments, displays^[Remember [Clever Hans](https://en.wikipedia.org/wiki/Clever_Hans)?]
 - Aggregation of datasets for meta/mega/multiverse analyses made *much* easier
+
+:::
+
+---
+
+::: {.fragment}
+
+![@Otsuka2026-ad Figure 3](https://journals.sagepub.com/cms/10.1177/00220221251389109/asset/e4af2390-07e0-49f7-b011-7e0dcd80894c/assets/images/large/10.1177_00220221251389109-fig3.jpg){#fig-otsuka-2026-fig-03 width="65%"}
 
 :::
 

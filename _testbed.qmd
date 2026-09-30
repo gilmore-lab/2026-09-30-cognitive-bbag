@@ -3,45 +3,123 @@ title: "_testbed"
 format: revealjs
 ---
 
-## {auto-animate=true}
-
-![@Tenopir2020-mq Fig 8](include/img/tenopir-2000-fig-xx.png){width="150%"}
-
-## {auto-animate=true}
-
-:::: {.columns}
-::: {.column width=60%}
-![@Tenopir2020-mq](include/img/tenopir-2000-fig-xx.png)
-:::
-::: {.column width=40%}
-::: {.fragment}
-- Must publish first
-- No time, funding
-- No permission
-- Not required
-- No place to put
-- Insufficient skills
-:::
-:::
-::::
-
 ## PLAY cleaning code
 
 ```{r}
+#| label: play-csv-data
+library(ggplot2)
 library(dplyr)
-play_df <- readr::read_csv("private/csv/Play_&_Learning_Across_a_Year_(PLAY)_project_-_data_release.csv")
+library(forcats)
+library(readr)
+library(stringr)
+
+play_df <- readr::read_csv(
+  "private/csv/Play_&_Learning_Across_a_Year_(PLAY)_project_-_data_release.csv",
+  show_col_types = FALSE
+)
 
 play_df <- play_df |>
-  mutate(file_ext = stringr::str_extract(file_name, "\\.[a-zA-Z0-9]+$")) |>
-  mutate(particip_id = stringr::str_extract(file_name, "[A-Z]{5}_[0-9]{3}"))
+  mutate(particip_id = stringr::str_extract(file_name, "[A-Z]{5}_[0-9]{3}")) |>
+  distinct() |>
+  filter(!is.na(particip_id)) |>
+  rename(
+    ethnicity = `participant-1-ethnicity`,
+    language = `participant-1-language`,
+    gender = `participant-1-gender`,
+    race = `participant-1-race`,
+    age_wks = `participant-1-age_weeks`,
+    age_mos = `participant-1-age_months`,
+    gold_silver = `group-1-name`,
+    sharing = container_release_level
+  ) |>
+  mutate(
+    english = str_detect(language, "English"),
+    spanish = str_detect(language, "Spanish"),
+    both = str_detect(language, "English, Spanish")
+  ) |>
+  mutate(gold_silver = if_else(str_detect(gold_silver, "No_"), "No_visit", gold_silver)) |>
+  filter(gold_silver %in% c("PLAY_Gold", "PLAY_Silver")) |>
+  select(
+    particip_id,
+    ethnicity,
+    gender,
+    race,
+    age_wks,
+    age_mos,
+    gold_silver,
+    sharing,
+    english,
+    spanish,
+    both
+  ) |>
+  distinct()
+```
 
-play_summ_n_files_df <- play_df |>
-  group_by(particip_id) |>
-  summarise(n_files = n())
+```{r}
+#| label: fig-play-data-release
+#| fig-cap: "Sharing permissions granted for PLAY corpus. Not that most parents gave permission to share data and allow excerpts to be shown."
 
-play_summ_release_df <- play_df |>
-  select(particip_id, release_level)
+play_df |>
+  mutate(sharing = fct_rev(fct_inorder(sharing))) |>
+  ggplot() +
+  geom_bar(aes(x = sharing, fill = sharing), stat = "count") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "n") +
+  ylab("dyads") +
+  xlab("") +
+  theme(axis.text = element_text(size = 18))
 ```
 
 
-## References
+```{r}
+#| label: fig-play-demog-age
+#| fig-cap: "Reported race^[using 1997 OMB categories] for children in PLAY sample."
+#| echo: true
+#| message: false
+#| warning: false
+play_df |>
+  filter(!is.na(age_wks)) |>
+  mutate(age_wks = as.numeric(age_wks)) |>
+  ggplot() +
+  aes(x = age_wks) +
+  geom_histogram(bins = 18) +
+  theme_classic() +
+  xlab("Age (weeks)") +
+  ylab("Participants") +
+  theme(axis.text = element_text(size = 18))
+```
+
+```{r}
+#| label: fig-play-demog-race
+#| fig-cap: "Reported race^[using 1997 OMB categories] for children in PLAY sample."
+#| echo: true
+play_df |>
+  filter(!is.na(race)) |>
+  mutate(n_race = fct_rev(fct_infreq(race))) |>
+  ggplot() +
+  geom_col(aes(x = n_race, fill = n_race), stat = "count") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "none") +
+  xlab("") +
+  ylab("dyads") +
+  theme(axis.text = element_text(size = 18))
+```
+
+```{r}
+#| label: fig-play-demog-ethnicity
+#| fig-cap: "Reported ethnicity ^[using 1997 OMB categories] for children in PLAY sample."
+#| echo: true
+play_df |>
+  filter(!is.na(ethnicity)) |>
+  mutate(n_ethnicity = fct_rev(fct_infreq(ethnicity))) |>
+  ggplot() +
+  geom_col(aes(x = n_ethnicity, fill = n_ethnicity), stat = "count") +
+  coord_flip() +
+  theme_classic() +
+  theme(legend.position = "none") +
+  xlab("") +
+  ylab("dyads") +
+  theme(axis.text = element_text(size = 18))
+``` 
