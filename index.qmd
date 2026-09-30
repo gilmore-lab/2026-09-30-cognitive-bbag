@@ -34,18 +34,27 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ![<https://penn-state-open-science.github.io>](include/img/osi-home.png){#fig-osi-page width="85%"}
 
-## Data sharing requires
+---
 
-::: {.incremental}
-- Best practices in project management
+:::: {.columns}
+::: {.column width=50%}
+- Project management
 - $+$ Data management 
 - $\rightarrow$ Sharing
 :::
 
-## Sharing...
+::: {.column width=50%}
 
-- Accelerates discovery
-- Bolsters credibility
+::: {.fragment}
+- Sharing
+  - Accelerates discovery
+  - Bolsters credibility
+  
+:::
+
+:::
+
+::::
 
 ## ...is an ethical thing to do
 
@@ -109,11 +118,11 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnl3aDlrZWZ2Nm9tcXh1czhvYjk4bjJlc2M3emR5dG96NnpldWx0cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7abrH8o4HMgEAV9e/giphy.gif){fig-align="center" #fig-yoda-fear-in-you width="75%"}
 
-## {auto-animate=true}
+## 
 
 ![@Houtkoop2018-tl Figure 3a](include/img/houtkoop-2018-fig-03a.png){#fig-houthoop-fear-yourself}
 
-## {auto-animate=true}
+## 
 
 :::: {.columns}
 ::: {.column width=60%}
@@ -130,11 +139,11 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 :::
 ::::
 
-## {auto-animate=true}
+## 
 
 ![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-03b.png)
 
-## {auto-animate=true}
+## 
 
 :::: {.columns}
 ::: {.column width=60%}
@@ -154,23 +163,23 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ![](https://www.azquotes.com/picture-quotes/quote-the-only-thing-we-have-to-fear-is-fear-itself-franklin-d-roosevelt-25-8-0879.jpg){fig-align="center"}
 
-## Mitigating
+## Mitigating concerns
 
 :::: {.columns}
-::: {.column width=50%}
+::: {.column width=60%}
 - Errors
   - Quality assurance testing and validation
   - Automated data cleaning, visualization, analysis
 - Control over IP^[You don't own your data, anyway.], fear of being scooped
-  - Publish your data
+  - Publish your data, garner citations
   
 :::
-::: {.column width=50%}
+::: {.column width=40%}
 ![](https://www.azquotes.com/picture-quotes/quote-the-only-thing-we-have-to-fear-is-fear-itself-franklin-d-roosevelt-25-8-0879.jpg)
 :::
 ::::
 
-## "How likely are you to share your research data..."
+## "How likely are you to share your research data if..."
 
 ![@Houtkoop2018-tl Figure 3b](include/img/houtkoop-2018-fig-04.png){#fig-houtkoop-2018-04 width="65%"}
 
@@ -439,6 +448,19 @@ Well-documented plans & practices can be reused for new projects.
 Be kind to your future (forgetful) self.
 
 :::
+
+---
+
+:::: {.columns}
+::: {.column width=50%}
+>*The first principle is that you must not fool yourself—and you are the easiest person to fool.*
+
+@Feynman1974-tk
+:::
+::: {.column width=50%}
+![Richard Feynman. Wikipedia^[By The Nobel Foundation - http://www.nobelprize.org/nobel_prizes/physics/laureates/1965/feynman-bio.html, PD-Sweden, https://en.wikipedia.org/w/index.php?curid=34664654]](https://upload.wikimedia.org/wikipedia/en/4/42/Richard_Feynman_Nobel.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled){#fig-feynman width="65%"}
+:::
+::::
 
 ## Automate & Standardize
 
@@ -803,6 +825,8 @@ play_summ_n_files_df <- play_df |>
 - *N*=`{r} dim(play_summ_n_files_df)[1]` participant dyads
 - *N*=`{r} format(sum(play_summ_n_files_df$n_files), big.mark = ",", digits = 4)` shared files
 
+
+
 ## PLAY sharing permission
 
 ```{r}
@@ -838,7 +862,8 @@ play_summ_demog_df <- play_df |>
     `participant-1-ethnicity`,
     `participant-1-language`,
     `participant-1-age_weeks`,
-    `participant-1-age_months`
+    `participant-1-age_months`,
+    `group-1-name`
   ) |>
   distinct() |>
   rename(
@@ -847,11 +872,13 @@ play_summ_demog_df <- play_df |>
     gender = `participant-1-gender`,
     race = `participant-1-race`,
     age_wks = `participant-1-age_weeks`,
-    age_mos = `participant-1-age_months`
+    age_mos = `participant-1-age_months`,
+    gold_silver = `group-1-name`
   ) |>
   mutate(english = str_detect(language, "English"),
          spanish = str_detect(language, "Spanish"),
-         both = str_detect(language, "English, Spanish"))
+         both = str_detect(language, "English, Spanish")) |>
+  mutate(gold_silver = if_else(str_detect(gold_silver, "No_"), "No_visit", gold_silver))
 ```
 
 - Sex reported at birth:
@@ -860,7 +887,7 @@ play_summ_demog_df <- play_df |>
   - English: `{r} sum(play_summ_demog_df$english == TRUE, na.rm = TRUE)`
   - Spanish: `{r} sum(play_summ_demog_df$spanish == TRUE, na.rm = TRUE)`
   - Both English & Spanish: `{r} sum(play_summ_demog_df$both == TRUE, na.rm = TRUE)`
-  
+
 ## PLAY demographics {.scrollable}
 
 ```{r}
@@ -985,6 +1012,8 @@ logout_db()
 ![](include/img/disclosive-reidentification.png){#fig-disclosive-reidentification}
 
 # The future of open psychological science
+
+## {background-color="black"}
 
 ## Imagine...
 
