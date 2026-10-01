@@ -3,22 +3,36 @@ title: "_testbed"
 format: revealjs
 ---
 
-## PLAY cleaning code
+## Setup
 
 ```{r}
-#| label: play-csv-data
+#| label: setup
+#| echo: true
 library(ggplot2)
 library(dplyr)
 library(forcats)
 library(readr)
 library(stringr)
+library(tidyr)
+```
 
-play_df <- readr::read_csv(
+## Read data
+
+```{r}
+#| label: read-csv
+#| echo: true
+play_raw_df <- readr::read_csv(
   "private/csv/Play_&_Learning_Across_a_Year_(PLAY)_project_-_data_release.csv",
   show_col_types = FALSE
 )
+```
 
-play_df <- play_df |>
+## PLAY cleaning code
+
+```{r}
+#| label: play-csv-data
+#| echo: true
+play_df <- play_raw_df |>
   mutate(particip_id = stringr::str_extract(file_name, "[A-Z]{5}_[0-9]{3}")) |>
   distinct() |>
   filter(!is.na(particip_id)) |>
@@ -35,7 +49,7 @@ play_df <- play_df |>
   mutate(
     english = str_detect(language, "English"),
     spanish = str_detect(language, "Spanish"),
-    both = str_detect(language, "English, Spanish")
+    english_spanish = str_detect(language, "English, Spanish"),
   ) |>
   mutate(gold_silver = if_else(str_detect(gold_silver, "No_"), "No_visit", gold_silver)) |>
   filter(gold_silver %in% c("PLAY_Gold", "PLAY_Silver")) |>
@@ -50,31 +64,45 @@ play_df <- play_df |>
     sharing,
     english,
     spanish,
-    both
+    english_spanish
   ) |>
   distinct()
 ```
+
+## Sharing
+
+```{r}
+play_sharing <- play_df |>
+  group_by(sharing) |>
+  summarise(n_dyads = n())  
+```
+
 
 ```{r}
 #| label: fig-play-data-release
 #| fig-cap: "Sharing permissions granted for PLAY corpus. Not that most parents gave permission to share data and allow excerpts to be shown."
 
-play_df |>
-  mutate(sharing = fct_rev(fct_inorder(sharing))) |>
+play_sharing |>
+  mutate(sharing = fct_reorder(sharing, n_dyads)) |>
   ggplot() +
-  geom_bar(aes(x = sharing, fill = sharing), stat = "count") +
+  geom_col(aes(x = sharing, y = n_dyads, fill = sharing)) +
+  geom_text(aes(x = sharing, y = n_dyads + 40, 
+                label = n_dyads),
+            vjust = 0) +
   coord_flip() +
   theme_classic() +
-  theme(legend.position = "n") +
-  ylab("dyads") +
+  theme(legend.position = "none") +
   xlab("") +
-  theme(axis.text = element_text(size = 18))
+  ylab("dyads") +
+  theme(axis.text = element_text(size = 18),
+        axis.title = element_text(size = 18))
 ```
 
+## Age
 
 ```{r}
 #| label: fig-play-demog-age
-#| fig-cap: "Reported race^[using 1997 OMB categories] for children in PLAY sample."
+#| fig-cap: "Age at test."
 #| echo: true
 #| message: false
 #| warning: false
@@ -87,39 +115,114 @@ play_df |>
   theme_classic() +
   xlab("Age (weeks)") +
   ylab("Participants") +
-  theme(axis.text = element_text(size = 18))
+  theme(axis.text = element_text(size = 18),
+        axis.title.x = element_text(size = 18),
+        axis.title.y = element_text(size = 18))
+```
+
+## Race
+
+```{r}
+play_race <- play_df |>
+  group_by(race) |>
+  summarise(n_dyads = n()) 
 ```
 
 ```{r}
 #| label: fig-play-demog-race
-#| fig-cap: "Reported race^[using 1997 OMB categories] for children in PLAY sample."
+#| fig-cap: "Reported race for children in PLAY sample."
 #| echo: true
-play_df |>
-  filter(!is.na(race)) |>
-  mutate(n_race = fct_rev(fct_infreq(race))) |>
+play_race |>
+  mutate(race = fct_reorder(race, n_dyads)) |>
   ggplot() +
-  geom_col(aes(x = n_race, fill = n_race), stat = "count") +
+  geom_col(aes(x = race, y = n_dyads, fill = race)) +
+  geom_text(aes(x = race, y = n_dyads + 40, 
+                label = n_dyads),
+            vjust = 0) +
   coord_flip() +
   theme_classic() +
   theme(legend.position = "none") +
   xlab("") +
   ylab("dyads") +
-  theme(axis.text = element_text(size = 18))
+  theme(axis.text = element_text(size = 18),
+        axis.title = element_text(size = 18))
+```
+
+## Ethnicity
+
+```{r}
+play_ethnicity <- play_df |>
+  group_by(ethnicity) |>
+  summarise(n_dyads = n())
 ```
 
 ```{r}
 #| label: fig-play-demog-ethnicity
-#| fig-cap: "Reported ethnicity ^[using 1997 OMB categories] for children in PLAY sample."
+#| fig-cap: "Reported ethnicity for children in PLAY sample."
 #| echo: true
-play_df |>
-  filter(!is.na(ethnicity)) |>
-  mutate(n_ethnicity = fct_rev(fct_infreq(ethnicity))) |>
+play_ethnicity |>
+  mutate(ethnicity = fct_reorder(ethnicity, n_dyads)) |>
   ggplot() +
-  geom_col(aes(x = n_ethnicity, fill = n_ethnicity), stat = "count") +
+  geom_col(aes(x = ethnicity, y = n_dyads, fill = ethnicity)) +
+  geom_text(aes(x = ethnicity, y = n_dyads + 40, label = n_dyads), vjust = 0) +
   coord_flip() +
-  theme_classic() +
-  theme(legend.position = "none") +
   xlab("") +
   ylab("dyads") +
-  theme(axis.text = element_text(size = 18))
-``` 
+  theme_classic() +
+  theme(legend.position = "none") +
+  theme(axis.text = element_text(size = 18),
+        axis.title = element_text(size = 18))
+```
+
+##
+
+```{r}
+play_barplot <- function(data, x_var, text_size = 16) {
+  assertthat::assert_that(is.data.frame((data)))
+  assertthat::assert_that(is.numeric(text_size) & text_size > 0)
+  # x_var is unquoted, so must capture
+  x_var_name <- as_label(enquo(x_var))
+  assertthat::assert_that(x_var_name %in% names(data))
+  
+  df <- data |>
+    group_by({{x_var}}) |>
+    summarise(n_dyads = n()) |>
+    mutate(x_sort = fct_reorder({{x_var}}, n_dyads))
+  
+  df |>
+    ggplot() +
+    geom_col(aes(x = x_sort, y = n_dyads, fill = x_sort)) +
+    geom_text(aes(x = x_sort, y = n_dyads + 40, label = n_dyads), 
+              vjust = 0) +
+    coord_flip() +
+    xlab("") +
+    ylab("dyads") +
+    theme_classic() +
+    theme(legend.position = "none") +
+    theme(axis.text = element_text(size = text_size),
+          axis.title = element_text(size = text_size))
+}
+```
+
+##
+
+```{r}
+play_lang <- play_df |>
+  select(particip_id, english, spanish, english_spanish) |>
+  mutate(english_only = ifelse(english & !spanish, TRUE, FALSE),
+         spanish_only = ifelse(spanish & !english, TRUE, FALSE)) |>
+  pivot_longer(
+    cols = c(english_only, spanish_only, english_spanish),
+    names_to = "language",
+    values_to = "speaks"
+  ) |>
+  select(particip_id, language, speaks) |>
+  mutate(lang_at_home = if_else(speaks == TRUE, language, NA)) |>
+  filter(!is.na(lang_at_home)) |>
+  select(particip_id, lang_at_home)
+```
+
+```{r}
+play_barplot(play_lang, dude)
+```
+
