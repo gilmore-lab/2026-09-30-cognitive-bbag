@@ -1,0 +1,28 @@
+---
+title: "_fig-03"
+format:
+  gfm:
+    mermaid-format: png
+---
+
+```{mermaid}
+%%| fig.width: 800
+%%| label: fig-proposal-to-project-realistic
+%%| fig-cap: "From proposal to project: More realistic"
+
+flowchart LR
+  A["Project_1"] --> B["Survey"]
+  A --> C["fMRI"]
+  A --> D["Task_1"]
+  A --> E["Task_2"]
+  B --> P["Data_pipeline_1"]
+  C --> Q["Data_pipeline_2"]
+  D --> R["Data_pipeline_3"]
+  E --> R
+  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
+  P --> G["Analysis_1"]
+  Q & R --> H["Analysis_2"]
+  G & H --> I["Poster"]
+  G & H --> J["Paper"]
+```
+

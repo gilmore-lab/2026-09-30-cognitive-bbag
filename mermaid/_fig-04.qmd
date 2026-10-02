@@ -1,0 +1,30 @@
+---
+title: "_fig-04"
+format:
+  gfm:
+    mermaid-format: png
+---
+
+```{mermaid}
+%%| fig.width: 800
+%%| label: fig-one-project-w-sharing-multirepo
+%%| fig-cap: "Planned data sharing in multiple repositories"
+flowchart LR
+  A["Project_1"] --> B["Survey"]
+  A --> C["fMRI"]
+  A --> D["Task_1"]
+  A --> E["Task_2"]
+  B --> P["Data_pipeline_1"]
+  C --> Q["Data_pipeline_2"]
+  D --> R["Data_pipeline_3"]
+  E --> R
+  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
+  P --> G["Analysis_1"]
+  Q & R --> H["Analysis_2"]
+  G & H --> I["Poster"]
+  G & H --> J["Paper"]
+  B & C & D & G & H & F --> K["OpenNeuro"]
+  B --> L["OSF"]
+  K --- L
+```
+

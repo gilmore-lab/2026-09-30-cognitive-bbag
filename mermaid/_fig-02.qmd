@@ -1,0 +1,23 @@
+---
+title: "_fig-02"
+format:
+  gfm:
+    mermaid-format: png
+---
+
+```{mermaid}
+%%| fig.width: 800
+%%| label: fig-proposal-to-project-realistic
+%%| fig-cap: "From proposal to project: More realistic"
+flowchart LR
+  A(["Idea"]) --> B["Proposal"]
+  B --> C("Project_1")
+  B --> D("Project_2")
+  B --> I("IRB protocol")
+  G(["Data mgmt plan"]) --> B
+  G <--> I
+  C --> I
+  D --> I
+  D --> E("Paper_2")
+  C --> F("Paper_1")
+```

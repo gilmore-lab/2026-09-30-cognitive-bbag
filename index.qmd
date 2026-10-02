@@ -270,103 +270,19 @@ plot(qrcode::qr_code("https://gilmore-lab.github.io/2026-09-30-cognitive-bbag/")
 
 ## Plan your work
 
-```{mermaid}
-%%| label: fig-proposal-to-project
-%%| fig-cap: "From proposal to project"
-flowchart LR
-  A(["Idea"]) --> B["Proposal"]
-  B --> C("Project_1")
-  B --> D("Project_2")
-  D --> E("Paper_2")
-  C --> F("Paper_1")
-  E --> G("Fame & Glory")
-  F --> G
-```
+![](mermaid/_fig-01_files/figure-commonmark/mermaid-figure-1.png)
 
 ---
 
-```{mermaid}
-%%| label: fig-proposal-to-project-realistic
-%%| fig-cap: "From proposal to project: More realistic"
-flowchart LR
-  A(["Idea"]) --> B["Proposal"]
-  B --> C("Project_1")
-  B --> D("Project_2")
-  B --> I("IRB protocol")
-  G(["Data mgmt plan"]) --> B
-  G <--> I
-  C --> I
-  D --> I
-  D --> E("Paper_2")
-  C --> F("Paper_1")
-```
+![](mermaid/_fig-02_files/figure-commonmark/mermaid-figure-1.png)
 
 ---
 
-```{mermaid}
-%%| label: fig-one-project
-%%| fig-cap: "One project workflow"
-flowchart LR
-  A["Project_1"] --> B["Survey"]
-  A --> C["fMRI"]
-  A --> D["Task_1"]
-  A --> E["Task_2"]
-  B --> P["Data_pipeline_1"]
-  C --> Q["Data_pipeline_2"]
-  D --> R["Data_pipeline_3"]
-  E --> R
-  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
-  P --> G["Analysis_1"]
-  Q & R --> H["Analysis_2"]
-  G & H --> I["Poster"]
-  G & H --> J["Paper"]
-```
+![](mermaid/_fig-03_files/figure-commonmark/mermaid-figure-1.png)
 
 ---
 
-```{mermaid}
-%%| label: fig-one-project-w-sharing
-%%| fig-cap: "Planned data sharing to a repository"
-flowchart TD
-  A["Project_1"] --> B["Survey"]
-  A --> C["fMRI"]
-  A --> D["Task_1"]
-  A --> E["Task_2"]
-  B --> P["Data_pipeline_1"]
-  C --> Q["Data_pipeline_2"]
-  D --> R["Data_pipeline_3"]
-  E --> R
-  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
-  P --> G["Analysis_1"]
-  Q & R --> H["Analysis_2"]
-  G & H --> I["Poster"]
-  G & H --> J["Paper"]
-  C & D & G & H & F --> K["Data repository"]
-```
-
----
-
-```{mermaid}
-%%| label: fig-one-project-w-sharing-multirepo
-%%| fig-cap: "Planned data sharing in multiple repositories"
-flowchart LR
-  A["Project_1"] --> B["Survey"]
-  A --> C["fMRI"]
-  A --> D["Task_1"]
-  A --> E["Task_2"]
-  B --> P["Data_pipeline_1"]
-  C --> Q["Data_pipeline_2"]
-  D --> R["Data_pipeline_3"]
-  E --> R
-  F["Data mgmt plan"] --- B & C & D & E & P & Q & R
-  P --> G["Analysis_1"]
-  Q & R --> H["Analysis_2"]
-  G & H --> I["Poster"]
-  G & H --> J["Paper"]
-  B & C & D & G & H & F --> K["OpenNeuro"]
-  B --> L["OSF"]
-  K --- L
-```
+![](mermaid/_fig-04_files/figure-commonmark/mermaid-figure-1.png)
 
 ---
 

@@ -1,0 +1,19 @@
+---
+title: "_fig-01"
+format:
+  gfm:
+    mermaid-format: png
+---
+
+```{mermaid}
+%%| label: fig-proposal-to-project
+%%| fig.width: 800
+flowchart LR
+  A(["Idea"]) --> B["Proposal"]
+  B --> C("Project_1")
+  B --> D("Project_2")
+  D --> E("Paper_2")
+  C --> F("Paper_1")
+  E --> G("Fame & Glory")
+  F --> G
+```
